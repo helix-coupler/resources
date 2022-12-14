@@ -1,7 +1,7 @@
 # Helix2 Technical Design
 #### <span style="color:grey">authors:</span> keccak256(sshmatrix)
+#### <span style="color:grey">repo:</span> https://github.com/helix-coupler
 ###### tags: `specification` `design` `architecture`
-
 # Double Helix (Helix2)
 
 Double Helix (Helix2) is an **on-chain node coupler** protocol designed to link names. Most blockchains have developed their versions of a naming system which allows representing addresses with human-readable names. 
@@ -10,34 +10,29 @@ Ethereum Name Service (ENS) is the first major on-chain name service on Ethereum
 
 ### Worthiness of links over nodes
 
-While the set of nodes form a canonical and natural choice for labeling of addresses on any blockchain, the observation nonetheless is that most nodes do not interact with each other on-chain. In fact, most wallets have a limited set of interactions with contracts and addresses. Keeping this in mind, we attempt to provide Ethereum with a next-generation link service, in addition to the name service already provided by ENS. The expected result of Helix2 service is a link-native ecosystem where an interaction between two entities is representable on-chain similar to a name. Note that while Helix2 has its own namespace, it nonetheless does not replace ENS, but is in fact an extension intended to work alongside ENS.
+While the set of nodes form a canonical and natural choice for labeling of addresses on any blockchain, the observation nonetheless is that most nodes do not interact with each other on-chain. In fact, most wallets have a limited set of interactions with contracts and addresses. Keeping this in mind, we attempt to provide Ethereum with a next-generation 'link service', in addition to the name service already provided by ENS. The expected result of Helix2 service is a link-native ecosystem where an interaction between two entities is representable on-chain similar to a human-readable ENS name. Note that while Helix2 has its own namespace, it does not replace ENS and is in fact intended to work alongside ENS as an extension.
 
 ### Helix2 basics
 
-Helix2 (Helix + 2) is motivated roughly by the double helix structure of DNA, where two polynucleotide chains are connected by bonds. The blockchain representation of this structure is two copies of a blockchain connected by links. All name services so far have been essentially on-chain **scalar** databases (e.g. ENS, LENS, LNR, CB.ID), meaning that names are simply isolated nodes representable by one label (see below). 
+Helix2 (Helix + 2) is motivated roughly by the double helix structure of DNA, where two polynucleotide chains are connected by bonds. The blockchain representation of this structure is two copies of a blockchain connected by links. All name services so far have been essentially on-chain *scalar* databases (e.g. ENS, LENS, LNR, CB.ID), meaning that names are simply isolated nodes representable by one label (see below). 
 
 &nbsp;
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/ens.png)
 
-Helix2, in comparison, is an on-chain **vector** database.  Very quickly, the basic syntax for the namespace is as follows:
+Helix2, in comparison, is an on-chain *vector* database.  In Helix2, **names** can bond with one another; **bonds** are directed links, pointing from one name to another. Very quickly, the basic syntax for the namespace is as follows:
 
-#### Syntax
+1.  All native objects (names, bonds etc) end with `:`, e.g. `nick:`, whereas `:` acts as a trailing marker
+2. A directional **bond** between two names `nick:` → `bob:` is represented by `nick?bob:`
+3. Given a bond` nick?bob:`, the origin of the bond is called a **cation** (`nick:`) and the end is called an **anion** (`bob:`) 
+4. Bond ` nick?bob:` can possess features such as,
+a) **polar** bond: when `nick?bob: != bob?nick:`, i.e. when the bond between nick and bob is uni-directional and requires only nick's approval, and
+b)  **covalent** bond: when `nick?bob: == bob?nick:`, i.e. when the bond between nick and bob is mutual, bi-directional and requires both nick and bob's approval,
+5. Helix2 allows for multi-bonding such that a cation can bond with multiple anions within one data structure instead of creating individual (and costlier) bonds; this structure is called an **atom**. In an atom, individual bonds between a cation and the set of anions may be covalent or polar.
+6. Lastly, we can define the highest form of abstraction in the form of a **molecule**, which is an atom comprising of *unique* bonds between a cation and a set of anions. In an molecule, individual bonds between the cation and anions may be covalent or polar.
 
-- All **names** end with `#`, e.g. `alice#`
-- A directional **link** between two names alice → bob is written as `alice#bob`
-- We denote a **hook** labeled `label` of link `alice#bob` with `alice#bob_label`
 
-In Helix2, **names** can *bond* with one another. **Bonds** are directed vectors, pointing from one name to another. 
 
 ## Architecture
-
-### Syntax
-
-- All **names** end with `#`, e.g. `alice#`
-- A directional **link** between two names alice → bob is written as `alice#bob`
-- We denote a **hook** labeled `label` of link `alice#bob` with `alice#bob_label`
-
-### Idea
 
 The idea for the architecture is as follows:
 
@@ -48,15 +43,15 @@ Names are represented by `namehash` such that
 namehash ~ keccak256(alice)
 ``` 
 
-#### Link (+ Hooks)
+#### Bond (+ Hooks)
 
-Each name can link to another name (`alice`  → `bob`). Links are represented by `linkhash` such that 
+Each name can bond to another name (`nick:`  → `bob:`). Bonds are represented by `linkhash` such that 
 ```
-linkhash ~ keccak256(keccak256(alice), keccak256(bob))
+linkhash ~ keccak256(keccak256(nick), keccak256(bob))
 ```
-A basic link structure then looks like:
+A basicbond structure then looks like:
 <pre>
-struct <b>LINK</b> {
+struct <b>BOND</b> {
     bytes32 _from;
     bytes32 _to;
     bytes32 _alias;
@@ -65,7 +60,7 @@ struct <b>LINK</b> {
 }
 </pre>
 
-Each link can have multiple hooks. Hooks are enumerable and indexed by `n`. Hooks are labeled by `labelhash ~ keccak256(label)`.
+Each bond can have multiple hooks. Hooks are enumerable and indexed by `n`. Hooks are labeled by `labelhash ~ keccak256(label)`.
 
 Each hook is a merkle node with a unique `hookhash ~ keccak256(labelhash, linkhash)`, mapping to a contractual relationship `hookhash => contract` between two names (e.g. chat, loan, yield, social, multisig etc etc) 
 ```
@@ -74,7 +69,7 @@ mapping(bytes32 => address) hooks
 such that the `_resolver` and `_controller` may now be placed inside hooks
 
 <pre>
-struct <b>LINK</b> {
+struct <b>BOND</b> {
     <i>mapping(bytes32 => address) _hooks;</i> <b>//contains _resolver & _controller</b>
     bytes32 _from;
     bytes32 _to;
@@ -86,7 +81,7 @@ struct <b>LINK</b> {
 
 When unlinking a link, one must unhook every hook in the link.
 
-#### Tree
+#### ATOM
 
 Since each name will link to several others with similar configuration, it is meaningful to also define a **tree** structure that allows for memory-efficient multi-linking to multiple linkee:
 
