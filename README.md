@@ -30,7 +30,8 @@ b)  **covalent** bond: when `nick?bob: == bob?nick:`, i.e. when the bond between
 5. Helix2 allows for multi-bonding such that a cation can bond with multiple anions within one data structure instead of creating individual (and costlier) bonds; this structure is called an **atom**. In an atom, individual bonds between a cation and the set of anions may be covalent or polar.
 6. Lastly, we can define the highest form of abstraction in the form of a **molecule**, which is an atom comprising of *unique* bonds between a cation and a set of anions. In an molecule, individual bonds between the cation and anions may be covalent or polar.
 
-
+&nbsp;
+![](https://raw.githubusercontent.com/helix-coupler/resources/master/helix2.png)
 
 ## Architecture
 

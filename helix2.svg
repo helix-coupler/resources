@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="391.70691mm"
-   height="283.67099mm"
-   viewBox="0 0 391.70691 283.67099"
+   width="345.07178mm"
+   height="258.55444mm"
+   viewBox="0 0 345.07178 258.55444"
    version="1.1"
    id="svg6"
    inkscape:version="1.1-dev (b39e6d56, 2020-09-19)"
@@ -110,8 +110,8 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="0.23742919"
-     inkscape:cx="922.38025"
-     inkscape:cy="73.706184"
+     inkscape:cx="876.05067"
+     inkscape:cy="27.376583"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -128,13 +128,13 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-9.1257358,-8.1363845)">
+     transform="translate(-20.965551,-20.691029)">
     <rect
        style="opacity:0.302251;fill:#ff3200;fill-opacity:0.217742;fill-rule:evenodd;stroke:none;stroke-width:1.09824;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:4.0564;paint-order:stroke fill markers;stop-color:#000000"
        id="rect976-5-8"
        width="165.38402"
        height="258.55444"
-       x="223.40718"
+       x="200.65332"
        y="20.691029"
        rx="1.5161456" />
     <rect
@@ -142,7 +142,7 @@
        id="rect976-5-8-2-9"
        width="111.60956"
        height="72.068123"
-       x="264.13449"
+       x="241.3804"
        y="197.23389"
        rx="1.0231721" />
     <rect
@@ -1219,14 +1219,6 @@
          style="fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-width:0.573609;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          x="108.3427"
          y="89.271751">×</tspan></text>
-    <rect
-       style="opacity:0.752412;fill:none;fill-opacity:0.133333;fill-rule:evenodd;stroke:#000000;stroke-width:0.189948;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:4.0564;stroke-opacity:1;paint-order:stroke fill markers;stop-color:#000000"
-       id="rect1463"
-       width="391.51697"
-       height="283.48105"
-       x="9.2207098"
-       y="8.2313585"
-       rx="3.1418574" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.782px;line-height:1.25;font-family:'Gtek Technology';-inkscape-font-specification:'Gtek Technology';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke:#000000;stroke-width:0.174149;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1242,26 +1234,26 @@
     <text
        xml:space="preserve"
        style="font-weight:300;font-size:12.3472px;line-height:1.25;font-family:'SF Pro Rounded';-inkscape-font-specification:'SF Pro Rounded Light';font-variant-ligatures:none;text-align:center;letter-spacing:-0.367771px;text-anchor:middle;stroke:#000000;stroke-width:0.564999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       x="253.61165"
+       x="230.85779"
        y="39.125362"
        id="text2120-9-6"><tspan
          sodipodi:role="line"
          id="tspan2118-8-9"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.3472px;font-family:'Mandatory Plaything';-inkscape-font-specification:'Mandatory Plaything';stroke:#000000;stroke-width:0.564999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         x="253.42776"
+         x="230.6739"
          y="39.125362">helix<tspan
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SF Mono';-inkscape-font-specification:'SF Mono'"
    id="tspan1291">2</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'Mandatory Plaything';-inkscape-font-specification:'Mandatory Plaything';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none"
-       x="245.70856"
+       x="222.9547"
        y="46.504211"
        id="text2139-5-30-4"><tspan
          sodipodi:role="line"
          id="tspan2137-0-7-6"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Gtek Technology';-inkscape-font-specification:'Gtek Technology';stroke:none;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         x="245.70856"
+         x="222.9547"
          y="46.504211">next gen</tspan></text>
     <g
        id="g1374-2"
@@ -1292,12 +1284,12 @@
        id="rect976-5-8-2-1"
        width="111.60956"
        height="31.596039"
-       x="264.13452"
+       x="241.38043"
        y="80.590797"
        rx="1.0231721" />
     <g
        id="g1349-2-7"
-       transform="rotate(-90,126.07117,100.73029)"
+       transform="rotate(-90,114.69423,112.10723)"
        style="stroke:#000000;stroke-width:0.238125;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">
       <rect
          style="opacity:1;fill:#ffb8be;fill-opacity:0.811765;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:4.0564;stroke-opacity:1;paint-order:stroke fill markers;stop-color:#000000"
@@ -1310,7 +1302,7 @@
     </g>
     <g
        id="g1349-2-7-3"
-       transform="rotate(-90,160.957,65.844431)"
+       transform="rotate(-90,149.58006,77.2215)"
        style="stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none">
       <rect
          style="opacity:1;fill:#b8d4ff;fill-opacity:0.811765;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:4.0564;stroke-opacity:1;paint-order:stroke fill markers;stop-color:#000000"
@@ -1324,39 +1316,39 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.05;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke:#000000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       x="289.57498"
+       x="266.82047"
        y="105.8249"
        id="text2139-0-6"><tspan
          sodipodi:role="line"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';text-align:end;text-anchor:end;stroke:#000000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         x="289.57498"
+         x="266.82047"
          y="105.8249"
          id="tspan2163-9">linker</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.05;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke:#000000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       x="359.27206"
+       x="336.51755"
        y="105.8236"
        id="text2139-0-6-3"><tspan
          sodipodi:role="line"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';text-align:end;text-anchor:end;stroke:#000000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         x="359.27206"
+         x="336.51755"
          y="105.8236"
          id="tspan2163-9-6">linkee</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 286.00845,94.372209 h 59.83594"
+       d="m 263.25414,94.372209 h 59.83594"
        id="path1218"
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.05;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke:#000000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       x="321.30972"
+       x="298.55521"
        y="100.19994"
        id="text2139-0-6-6"><tspan
          sodipodi:role="line"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';text-align:end;text-anchor:end;stroke:#000000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         x="321.30972"
+         x="298.55521"
          y="100.19994"
          id="tspan2163-9-4">link</tspan></text>
     <rect
@@ -1364,12 +1356,12 @@
        id="rect976-5-8-2"
        width="111.60956"
        height="72.068123"
-       x="264.13449"
+       x="241.3804"
        y="118.81583"
        rx="1.0231721" />
     <g
        id="g1665"
-       transform="translate(13.229169)">
+       transform="translate(-9.5250005)">
       <g
          id="g1349-2"
          transform="rotate(-90,150.21407,138.10229)"
@@ -1518,28 +1510,28 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;line-height:1.25;font-family:'Mandatory Plaything';-inkscape-font-specification:'Mandatory Plaything';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none"
-       x="275.34857"
+       x="252.59416"
        y="124.53817"
        id="text2139-5-30-4-5-7"><tspan
          sodipodi:role="line"
          id="tspan2137-0-7-6-3-5"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Gtek Technology';-inkscape-font-specification:'Gtek Technology';stroke:none;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         x="275.34857"
+         x="252.59416"
          y="124.53817">atom</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;line-height:1.25;font-family:'Mandatory Plaything';-inkscape-font-specification:'Mandatory Plaything';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none"
-       x="285.87677"
+       x="263.12225"
        y="202.95625"
        id="text2139-5-30-4-5-7-7"><tspan
          sodipodi:role="line"
          id="tspan2137-0-7-6-3-5-9"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Gtek Technology';-inkscape-font-specification:'Gtek Technology';stroke:none;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         x="285.87677"
+         x="263.12225"
          y="202.95625">molecule</tspan></text>
     <g
        id="g1665-9"
-       transform="translate(13.229169,78.825506)">
+       transform="translate(-9.5250008,78.825506)">
       <g
          id="g1349-2-6"
          transform="rotate(-90,150.21407,138.10229)"
@@ -1687,12 +1679,12 @@
     </g>
     <path
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.174304px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-       d="m 316.76312,94.365721 -1.67323,0.943575 0.0102,-1.88715 z"
+       d="m 294.00881,94.365721 -1.67323,0.943575 0.0102,-1.88715 z"
        id="path1062-7-66"
        sodipodi:nodetypes="cccc" />
     <g
        id="g2023"
-       transform="translate(13.229169)">
+       transform="translate(-9.5250005)">
       <path
          style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 272.76811,155.86671 h 8.69669 v -23.67836 h 20.23624"
@@ -1751,9 +1743,9 @@
     </g>
     <g
        id="g2061"
-       transform="translate(12.431019,-63.821)">
+       transform="translate(-10.32315,-63.821)">
       <path
-         style="fill:none;stroke:#0048c2;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.6,0.6;stroke-opacity:0.827451;stroke-dashoffset:0"
+         style="fill:none;stroke:#0048c2;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.6, 0.6;stroke-dashoffset:0;stroke-opacity:0.827451"
          d="m 273.56626,294.96 h 8.69669 v -20.178 h 20.23624"
          id="path1889-7"
          sodipodi:nodetypes="cccc" />
@@ -1763,7 +1755,7 @@
          id="path1889-0-8"
          sodipodi:nodetypes="cccc" />
       <path
-         style="fill:none;stroke:#9f00ff;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.6,0.6;stroke-opacity:0.827451;stroke-dashoffset:0"
+         style="fill:none;stroke:#9f00ff;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.6, 0.6;stroke-dashoffset:0;stroke-opacity:0.827451"
          d="m 273.56626,298.56 h 38.09225 v -7.41019 h 8.87595"
          id="path1889-0-7-5"
          sodipodi:nodetypes="cccc" />
@@ -1815,7 +1807,7 @@
     </g>
     <g
        id="g2132"
-       transform="translate(4.7625002,0.01508969)">
+       transform="translate(-17.991672,0.01508969)">
       <g
          id="g1544">
         <g
@@ -1877,7 +1869,7 @@
     </g>
     <g
        id="g1955"
-       transform="translate(-59.435542,-119.73557)">
+       transform="translate(-82.189723,-119.73557)">
       <path
          style="opacity:0.398714;fill:none;stroke:#000000;stroke-width:0.132292;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 405.50354,218.53695 3.41735,-24.74865"
@@ -2086,7 +2078,7 @@
     </g>
     <g
        id="g1955-3"
-       transform="translate(-129.20717,-119.73532)">
+       transform="translate(-151.96148,-119.73532)">
       <path
          style="opacity:0.398714;fill:none;stroke:#000000;stroke-width:0.132292;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 405.50354,218.53695 3.41735,-24.74865"
@@ -2296,19 +2288,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;line-height:1.25;font-family:'Mandatory Plaything';-inkscape-font-specification:'Mandatory Plaything';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none"
-       x="275.93286"
+       x="253.17844"
        y="86.228836"
        id="text2139-5-30-4-5"><tspan
          sodipodi:role="line"
          id="tspan2137-0-7-6-3"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Gtek Technology';-inkscape-font-specification:'Gtek Technology';stroke:none;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         x="275.93286"
+         x="253.17844"
          y="86.228836">bond</tspan></text>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.182626;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 205.21205,20.77902 V 279.11327"
-       id="path1309"
-       sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.92316px;line-height:1.25;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke:#000000;stroke-width:0.245584;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
