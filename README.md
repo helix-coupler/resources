@@ -1,6 +1,6 @@
 # Helix2 Technical Design
 #### <span style="color:grey">authors:</span> keccak256(sshmatrix)
-![](https://raw.githubusercontent.com/helix-coupler/resources/master/helix2-logo.png =300x300)
+![](https://raw.githubusercontent.com/helix-coupler/resources/master/helix2-logo.png)
 #### <span style="color:grey">repo:</span> https://github.com/helix-coupler
 ###### tags: `specification` `design` `architecture`
 # Double Helix (Helix2)
