@@ -109,9 +109,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.23742919"
-     inkscape:cx="876.05067"
-     inkscape:cy="27.376583"
+     inkscape:zoom="0.51659976"
+     inkscape:cx="811.07278"
+     inkscape:cy="624.27439"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1510,25 +1510,25 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;line-height:1.25;font-family:'Mandatory Plaything';-inkscape-font-specification:'Mandatory Plaything';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none"
-       x="252.59416"
+       x="263.12234"
        y="124.53817"
        id="text2139-5-30-4-5-7"><tspan
          sodipodi:role="line"
          id="tspan2137-0-7-6-3-5"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Gtek Technology';-inkscape-font-specification:'Gtek Technology';stroke:none;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         x="252.59416"
-         y="124.53817">atom</tspan></text>
+         x="263.12234"
+         y="124.53817">molecule</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;line-height:1.25;font-family:'Mandatory Plaything';-inkscape-font-specification:'Mandatory Plaything';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none"
-       x="263.12225"
+       x="261.51831"
        y="202.95625"
        id="text2139-5-30-4-5-7-7"><tspan
          sodipodi:role="line"
          id="tspan2137-0-7-6-3-5-9"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:'Gtek Technology';-inkscape-font-specification:'Gtek Technology';stroke:none;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         x="263.12225"
-         y="202.95625">molecule</tspan></text>
+         x="261.51831"
+         y="202.95625">polycule</tspan></text>
     <g
        id="g1665-9"
        transform="translate(-9.5250008,78.825506)">
