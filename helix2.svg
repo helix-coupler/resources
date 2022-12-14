@@ -109,9 +109,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.51659976"
-     inkscape:cx="811.07278"
-     inkscape:cy="624.27439"
+     inkscape:zoom="0.61985019"
+     inkscape:cx="843.75226"
+     inkscape:cy="573.52568"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1323,18 +1323,18 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';text-align:end;text-anchor:end;stroke:#000000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          x="266.82047"
          y="105.8249"
-         id="tspan2163-9">linker</tspan></text>
+         id="tspan2163-9">cation</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.05;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke:#000000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       x="336.51755"
+       x="335.50885"
        y="105.8236"
        id="text2139-0-6-3"><tspan
          sodipodi:role="line"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';text-align:end;text-anchor:end;stroke:#000000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         x="336.51755"
+         x="335.50885"
          y="105.8236"
-         id="tspan2163-9-6">linkee</tspan></text>
+         id="tspan2163-9-6">anion</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 263.25414,94.372209 h 59.83594"
@@ -1343,14 +1343,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.05;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke:#000000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       x="298.55521"
+       x="299.86707"
        y="100.19994"
        id="text2139-0-6-6"><tspan
          sodipodi:role="line"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';text-align:end;text-anchor:end;stroke:#000000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         x="298.55521"
+         x="299.86707"
          y="100.19994"
-         id="tspan2163-9-4">link</tspan></text>
+         id="tspan2163-9-4">bond</tspan></text>
     <rect
        style="opacity:0.302251;fill:#0054ff;fill-opacity:0.318548;fill-rule:evenodd;stroke:none;stroke-width:0.476318;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:4.0564;paint-order:stroke fill markers;stop-color:#000000"
        id="rect976-5-8-2"
@@ -1450,7 +1450,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';text-align:end;text-anchor:end;stroke:#000000;stroke-width:0.206813;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            x="274.47186"
            y="166.37485"
-           id="tspan2163-9-1">linker</tspan></text>
+           id="tspan2163-9-1">cation</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.38913px;line-height:1.05;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1461,7 +1461,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';text-align:end;text-anchor:end;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            x="310.22818"
            y="123.894"
-           id="tspan2163-9-6-5">linkee</tspan></text>
+           id="tspan2163-9-6-5">anion</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.38913px;line-height:1.05;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1472,7 +1472,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';text-align:end;text-anchor:end;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            x="340.94684"
            y="131.71033"
-           id="tspan2163-9-6-5-0">linkee</tspan></text>
+           id="tspan2163-9-6-5-0">anion</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.38913px;line-height:1.05;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1483,7 +1483,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';text-align:end;text-anchor:end;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            x="329.45712"
            y="158.76509"
-           id="tspan2163-9-6-5-2">linkee</tspan></text>
+           id="tspan2163-9-6-5-2">anion</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.38913px;line-height:1.05;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1494,7 +1494,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';text-align:end;text-anchor:end;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            x="341.92468"
            y="177.09973"
-           id="tspan2163-9-6-5-04">linkee</tspan></text>
+           id="tspan2163-9-6-5-04">anion</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.38913px;line-height:1.05;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1505,7 +1505,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';text-align:end;text-anchor:end;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            x="319.67865"
            y="184.88229"
-           id="tspan2163-9-6-5-5">linkee</tspan></text>
+           id="tspan2163-9-6-5-5">anion</tspan></text>
     </g>
     <text
        xml:space="preserve"
@@ -1620,7 +1620,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';text-align:end;text-anchor:end;stroke:#000000;stroke-width:0.206813;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            x="274.47186"
            y="166.37485"
-           id="tspan2163-9-1-4">linker</tspan></text>
+           id="tspan2163-9-1-4">cation</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.38913px;line-height:1.05;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1631,7 +1631,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';text-align:end;text-anchor:end;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            x="310.22818"
            y="123.894"
-           id="tspan2163-9-6-5-1">linkee</tspan></text>
+           id="tspan2163-9-6-5-1">anion</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.38913px;line-height:1.05;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1642,7 +1642,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';text-align:end;text-anchor:end;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            x="340.94684"
            y="131.71033"
-           id="tspan2163-9-6-5-0-8">linkee</tspan></text>
+           id="tspan2163-9-6-5-0-8">anion</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.38913px;line-height:1.05;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1653,7 +1653,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';text-align:end;text-anchor:end;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            x="329.45712"
            y="158.76509"
-           id="tspan2163-9-6-5-2-7">linkee</tspan></text>
+           id="tspan2163-9-6-5-2-7">anion</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.38913px;line-height:1.05;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1664,7 +1664,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';text-align:end;text-anchor:end;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            x="341.92468"
            y="177.09973"
-           id="tspan2163-9-6-5-04-5">linkee</tspan></text>
+           id="tspan2163-9-6-5-04-5">anion</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.38913px;line-height:1.05;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1675,7 +1675,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';text-align:end;text-anchor:end;stroke:#000000;stroke-width:0.149555;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            x="319.67865"
            y="184.88229"
-           id="tspan2163-9-6-5-5-6">linkee</tspan></text>
+           id="tspan2163-9-6-5-5-6">anion</tspan></text>
     </g>
     <path
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.174304px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
@@ -2414,6 +2414,6 @@
          id="tspan2137-5-5-0"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.86483px;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';stroke:#000000;stroke-width:0.245584;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          x="-250.31721"
-         y="93.822151">covalent</tspan></text>
+         y="93.822151">equal</tspan></text>
   </g>
 </svg>
