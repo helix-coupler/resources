@@ -160,10 +160,10 @@ Syntax: `function getBondage(bytes32 namehash) returns (uint[](2));`
 Function: `getBond()` : <span style="color:blue"> returns a bond</span>
 Syntax: `function getBond(bytes32 bondhash) returns (bytes32);`
 
-#### link()
+#### bond()
 
-Function: `bind()` : <span style="color:blue"> creates a new bond and returns its hash</span>
-Syntax: `function bind(bytes32 from, bytes32 to, bytes32 alias) return (bytes32);`
+Function: `bond()` : <span style="color:blue"> creates a new bond and returns its hash</span>
+Syntax: `function bond(bytes32 from, bytes32 to, bytes32 alias) return (bytes32);`
 
 #### getHookCount()
 
@@ -172,7 +172,7 @@ Syntax: `function getHookCount(bytes32 bondhash) returns (uint);`
 
 #### getHook()
 
-Function: `getHook()` : *<span style="color:blue"> returns a hook</span>*
+Function: `getHook()` : <span style="color:blue"> returns a hook</span>
 Syntax: `function getHook(bytes32 hookhash) returns (address);`
 
 #### hook()
@@ -180,10 +180,10 @@ Syntax: `function getHook(bytes32 hookhash) returns (address);`
 Function: `hook()` : <span style="color:blue"> creates a new hook in a link with label</span>
 Syntax: `function hook(bytes32 bondhash, bytes32 labelhash);`
 
-#### unbind()
+#### unbond()
 
-Function: `unbind()` : <span style="color:blue"> breaks a bond</span>
-Syntax: `function brkbond(bytes32 bondhash);`
+Function: `unbond()` : <span style="color:blue"> breaks a bond</span>
+Syntax: `function unbond(bytes32 bondhash);`
 
 #### rehook()
 
@@ -199,5 +199,6 @@ Syntax: `function unhook(bytes32 hookhash) returns (bool);`
 
 Function: `unhookAll()` : <span style="color:blue"> returns `true` after unhooking all hooks inside a bond; returns `false` otherwise</span>
 Syntax: `function unhookAll(bytes32 bondhash) returns (bool);`
+
 
 
