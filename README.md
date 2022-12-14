@@ -26,9 +26,9 @@ Helix2, in comparison, is an on-chain *vector* database.  In Helix2, **names** c
 3. Given a bond` nick?bob:`, the origin of the bond is called a **cation** (`nick:`) and the end is called an **anion** (`bob:`) 
 4. Bond ` nick?bob:` can possess features such as,
 a) **polar** bond: when `nick?bob: != bob?nick:`, i.e. when the bond between nick and bob is uni-directional and requires only nick's approval, and
-b)  **covalent** bond: when `nick?bob: == bob?nick:`, i.e. when the bond between nick and bob is mutual, bi-directional and requires both nick and bob's approval,
-5. Helix2 allows for multi-bonding such that a cation can bond with multiple anions within one data structure instead of creating individual (and costlier) bonds; this structure is called an **atom**. In an atom, individual bonds between a cation and the set of anions may be covalent or polar.
-6. Lastly, we can define the highest form of abstraction in the form of a **molecule**, which is an atom comprising of *unique* bonds between a cation and a set of anions. In an molecule, individual bonds between the cation and anions may be covalent or polar.
+b)  **equal** bond: when `nick?bob: == bob?nick:`, i.e. when the bond between nick and bob is mutual, bi-directional and requires both nick and bob's approval,
+5. Helix2 allows for multi-bonding such that a cation can bond with multiple anions within one data structure instead of creating individual (and costlier) bonds; this structure is called an **molecule**. In a molecule, individual bonds between a cation and the set of anions may either be equal or polar but not a mix of the two.
+6. Lastly, we can define the highest form of abstraction in the form of a **polycule**, which is an molecule comprising of *unique* bonds between a cation and a set of anions. In a polycule, individual bonds between the cation and anions may be equal or polar or a mix of the two.
 
 &nbsp;
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/helix2.png)
