@@ -6,8 +6,8 @@
    version="1.1"
    id="svg6"
    inkscape:version="1.1-dev (b39e6d56, 2020-09-19)"
-   sodipodi:docname="double-helix.svg"
-   inkscape:export-filename="/Users/avneetsingh/Documents/sshmatrix/buidl/helix-group/resources/helix2.png"
+   sodipodi:docname="helix2-ens.svg"
+   inkscape:export-filename="/Users/avneetsingh/Documents/sshmatrix/buidl/helix-coupler/resources/helix2-ens.png"
    inkscape:export-xdpi="300"
    inkscape:export-ydpi="300"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -111,7 +111,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.43797627"
      inkscape:cx="488.61095"
-     inkscape:cy="571.9488"
+     inkscape:cy="574.23202"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1375,14 +1375,6 @@
          style="fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-width:0.573609;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          x="108.3427"
          y="89.271751">×</tspan></text>
-    <rect
-       style="opacity:0.752412;fill:none;fill-opacity:0.133333;fill-rule:evenodd;stroke:#000000;stroke-width:0.268688;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:4.0564;stroke-opacity:1;paint-order:stroke fill markers;stop-color:#000000"
-       id="rect1463"
-       width="391.43823"
-       height="567.3313"
-       x="9.2600794"
-       y="8.2707281"
-       rx="3.1412256" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.782px;line-height:1.25;font-family:'Gtek Technology';-inkscape-font-specification:'Gtek Technology';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;stroke:#000000;stroke-width:0.174149;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -2634,7 +2626,7 @@
        y="306.23056"
        rx="1.5161456" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.214;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 203.81177,20.848591 V 564.78502"
        id="path1309"
        sodipodi:nodetypes="cc" />
