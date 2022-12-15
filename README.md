@@ -56,7 +56,7 @@ The idea for the architecture is as follows:
 
 #### Name
 
-Names is a structure in form of
+A 'name' is a generic structure in form of
 <pre>
 struct NAME {
   address owner;
@@ -71,13 +71,13 @@ Native Helix2 names do not have subdomain functionality like ENS since it is a f
 
 #### Bond & Hook
 
-Each name can bond to another name (`alice:`  → `bob:`). Bonds are represented by `bondhash` such that for equal bonds:
+Each name can bond to another name (`alice:`  → `bob:`). Bonds are represented by `bondhash` such that for secure bonds:
 ```
-bondhash ~ keccak256(keccak256(bob), keccak256(unicode"↔"), keccak256(alice))
+bondhash ~ keccak256(keccak256(bob), keccak256(alice))
 ```
-and for polar bonds:
+and for unsecure bonds:
 ```
-bondhash ~ keccak256(keccak256(bob), keccak256(unicode"←"), keccak256(alice))
+bondhash ~ keccak256(keccak256(bob), keccak256(alice))
 ```
 A basic bond structure then looks like:
 <pre>
