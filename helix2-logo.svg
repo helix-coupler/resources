@@ -7,9 +7,9 @@
    viewBox="0, 0, 400,400"
    sodipodi:docname="helix2-logo.svg"
    inkscape:version="1.1-dev (b39e6d56, 2020-09-19)"
-   inkscape:export-filename="/Users/avneetsingh/Documents/sshmatrix/buidl/helix-coupler/resources/helix2-logo.png"
-   inkscape:export-xdpi="500"
-   inkscape:export-ydpi="500"
+   inkscape:export-filename="/Users/avneetsingh/Documents/sshmatrix/buidl/helix-coupler/resources/helix2-logo-small.png"
+   inkscape:export-xdpi="126.35773"
+   inkscape:export-ydpi="126.35773"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -162,7 +162,8 @@
        x1="180.67262"
        y1="139.47785"
        x2="271.47008"
-       y2="139.47785" />
+       y2="139.47785"
+       gradientTransform="translate(0.62435917,0.4265403)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient2059"
@@ -297,22 +298,30 @@
      inkscape:window-height="805"
      id="namedview1250"
      showgrid="false"
-     inkscape:zoom="3.3410649"
-     inkscape:cx="182.72617"
-     inkscape:cy="190.20882"
+     inkscape:zoom="0.62205178"
+     inkscape:cx="-121.37253"
+     inkscape:cy="94.043618"
      inkscape:window-x="78"
-     inkscape:window-y="47"
+     inkscape:window-y="25"
      inkscape:window-maximized="0"
-     inkscape:current-layer="g969" />
+     inkscape:current-layer="svgg" />
   <g
      id="svgg">
+    <rect
+       style="opacity:0.98;fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1.26856;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.0282258;paint-order:stroke fill markers;stop-color:#000000;fill-opacity:1"
+       id="rect919"
+       width="226.65575"
+       height="226.65575"
+       x="67.935074"
+       y="60.689571"
+       rx="3.4219704" />
     <g
        id="g969">
       <circle
          style="fill:#0012d7;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers;stop-color:#000000"
          id="path841-6-9"
-         cx="19.580418"
-         cy="-294.90271"
+         cx="19.893152"
+         cy="-294.68811"
          r="4.8463454"
          transform="rotate(145.66048)" />
       <circle
@@ -353,15 +362,15 @@
       <circle
          style="fill:#7f0dff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers;stop-color:#000000"
          id="path841-2"
-         cx="-29.703306"
-         cy="220.83286"
+         cx="-30.016724"
+         cy="220.61874"
          r="3.6347592"
          transform="rotate(-34.33952)" />
       <circle
          style="fill:#0d0fff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers;stop-color:#000000"
          id="path841-26"
-         cx="-55.522671"
-         cy="245.63185"
+         cx="-54.585644"
+         cy="246.27199"
          r="1.9385383"
          transform="rotate(-34.33952)" />
       <circle
@@ -414,17 +423,10 @@
          r="1.9461793"
          transform="rotate(-34.33952)" />
       <circle
-         style="fill:#0070ff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers;stop-color:#000000;stroke-opacity:1"
-         id="path841-9-6"
-         cx="-143.96219"
-         cy="-261.96982"
-         r="2.9078074"
-         transform="rotate(145.66048)" />
-      <circle
          style="fill:#0070ff;fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient1947);stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers;stop-color:#000000"
          id="path841-26-6"
-         cx="-156.02379"
-         cy="-249.36932"
+         cx="-155.39943"
+         cy="-248.94278"
          r="1.9385383"
          transform="rotate(145.66048)" />
       <g
@@ -556,15 +558,15 @@
       <circle
          style="fill:#0d77ff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers;stop-color:#000000"
          id="path841-95-1"
-         cx="37.082672"
-         cy="-283.75378"
+         cx="37.295971"
+         cy="-284.06601"
          r="4.3617115"
          transform="rotate(145.66048)" />
       <circle
          style="fill:#580dff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers;stop-color:#000000"
          id="path841-9"
-         cx="-43.461075"
-         cy="233.03136"
+         cx="-44.396545"
+         cy="232.39227"
          r="2.9078074"
          transform="rotate(-34.33952)" />
       <circle
@@ -609,14 +611,13 @@
          cy="-295.63104"
          r="4.6040287"
          transform="rotate(145.66048)" />
+      <circle
+         style="fill:#0070ff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers;stop-color:#000000"
+         id="path841-9-6"
+         cx="-144.27429"
+         cy="-262.18304"
+         r="2.9078074"
+         transform="rotate(145.66048)" />
     </g>
-    <rect
-       style="opacity:0.98;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.26856;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.0282258;paint-order:stroke fill markers;stop-color:#000000"
-       id="rect919"
-       width="226.65575"
-       height="226.65575"
-       x="67.935074"
-       y="60.689571"
-       rx="3.4219704" />
   </g>
 </svg>
