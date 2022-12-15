@@ -5,7 +5,7 @@
 ###### tags: `specification` `design` `architecture` `link` `bond`
 # Double Helix (Helix2)
 
-Double Helix (Helix2) is an on-chain node coupling protocol designed to link and/or bind names. Most blockchains have developed their versions of a naming system which allows representing addresses with human-readable names. Helix2 is designed as a possible next-generation successor of these name services.
+Double Helix (Helix2) is an on-chain node-coupling protocol designed to link and/or bind names. Most blockchains have developed their versions of a naming system which allows representing addresses with human-readable names. Helix2 is designed as a possible next-generation successor of these name services.
 
 For instance, Ethereum Name Service (ENS) is the first major on-chain name service on Ethereum in the form of a heirarchical Merkle tree-like data structure. Like all name services, it focuses on assigning names to the nodes (usually addresses) on the blockchain. Double Helix, or Helix2, now aims to standardise on-chain representation of links/bonds in addition to names.
 
@@ -15,13 +15,13 @@ While the set of nodes form a canonical and natural choice for labeling of addre
 
 #### Link vs Bond?
 
-- A link is an open relationship between two entities where one entity (source) may set the link with or without explicit approval of the other (target).
+- A 'link' is an open relationship between two entities where one entity (source) may set the link with or without explicit approval of the other (target).
 
-- A bond  is a closed relationship between two entities that requires explicit approval of both the source and the target. In other words, a bond is a secure link. Alternatively, a link is an unsecure bond.
+- A 'bond'  is a closed relationship between two entities that requires explicit approval of both the source and the target. In other words, a bond is a secure link. Alternatively, a link is an unsecure bond.
 
 ### Helix2 basics
 
-Helix2 (Helix + 2) is motivated roughly by the double helix structure of DNA, where two polynucleotide chains are connected by bonds. The blockchain representation of this structure is two copies of a blockchain connected by secure or unsecure bonds (aka links). All name services so far have been essentially on-chain scalar databases (e.g. ENS, LENS, LNR, CB.ID), meaning that names are simply isolated nodes representable by one label (see figure below). 
+Helix2 (Helix + 2) is motivated roughly by the double helix structure of DNA, where two polynucleotide chains are connected by bonds. The blockchain representation of this structure is two copies of a blockchain connected by secure or unsecure bonds (aka links). All name services so far have been essentially on-chain scalar databases (e.g. ENS, LENS, LNR, CB.ID), meaning that names are simply isolated nodes representable by one label (see figure below).
 
 &nbsp;
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/ens.png)
@@ -29,26 +29,26 @@ Helix2 (Helix + 2) is motivated roughly by the double helix structure of DNA, wh
 Helix2, in comparison, is an on-chain vector database.  In Helix2, names can bond (or link) with one another; bonds (or links) are vectors between names, pointing from one name to another. In succinct, the basic syntax for the namespace is as follows:
 
 1. All native objects (names, links, bonds etc) end with `:`, e.g. `alice:`, whereas `:` acts as a trailing marker.
-    
-2. A directional bond between two names `alice:` → `bob:` is represented by `alice?bob:`.
-    
-3. Given a bond` alice?bob:`, the origin of the bond is called a cation (`alice:`) and the end is called an anion (`bob:`).
-    
-4. Of course, a bond ` alice?bob:` can be,
-    
-- Unsecure bond (= link): when `alice?bob: != bob?alice:`, i.e. when the bond between alice and bob is uni-directional and requires only alice's approval, and
-    
-- Secure bond: when `alice?bob: == bob?alice:`, i.e. when the bond between alice and bob is mutual, bi-directional and requires both alice's and bob's approval.
 
-5. Helix2 allows for multi-bonding such that a cation can bond with multiple anions within one data structure instead of creating individual (and costlier) bonds; this structure is called a molecule. In a molecule, individual bonds between a cation and the set of anions may either be secure or unsecure but not a mix of the two.
-    
-6. Lastly, we can define the highest form of abstraction in the form of a polycule, which is a molecule comprising of unique bonds between a cation and a set of anions. In a polycule, individual bonds between the cation and anions may be secure, unsecure or a mix of the two.
+2. A directional bond between two names `alice:` → `bob:` is represented by `alice?bob:`.
+
+3. Given a bond` alice?bob:`, the source of the bond is called a cation (`alice:`) and the target is called an anion (`bob:`).
+
+4. Further, a bond ` alice?bob:` can be,
+
+- Unsecure bond (link) → when `alice?bob: != bob?alice:`, i.e. when the bond between alice and bob is uni-directional and requires only alice's approval, and
+
+- Secure bond → when `alice?bob: == bob?alice:`, i.e. when the bond between alice and bob is mutual, bi-directional and requires both alice's and bob's approval.
+
+5. Helix2 allows for multi-bonding such that a cation can bond with multiple anions within one data structure instead of creating individual (and costlier) bonds; this structure is called a 'molecule'. In a molecule, individual bonds between a cation and the set of anions may either be secure or unsecure but not a mix of the two.
+
+6. Lastly, we can define the highest form of abstraction in the form of a 'polycule', which is a molecule comprising of unique bonds between a cation and a set of anions. In a polycule, individual bonds between the cation and anions may be secure, unsecure or a mix of the two.
 
 &nbsp;
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/helix2.png)
 &nbsp;
 
-PS: Note that in a heirarchical namespace such as ENS, the labels of subnodes form the leaves of the Merkle tree. Helix2, on the other hand, is an "inverted" Merkle tree in the sense that names are the leaves and linking is the path toward root node from the leaves. 
+PS: Note that in a heirarchical namespace such as ENS, the labels of subnodes form the leaves of the Merkle tree. Helix2, on the other hand, is an "inverted" Merkle tree in the sense that names are the leaves and linking is the path toward root node from the leaves.
 
 ## Architecture
 
@@ -59,7 +59,9 @@ The idea for the architecture is as follows:
 Names are represented by `namehash` such that
 ```
 namehash ~ keccak256(alice)
-``` 
+```
+
+Native Helix2 names do not have subdomain functionality like ENS since it is a flat namespace by choice although it is capable of importing heirarchical namespaces.
 
 #### Bond (+ Hooks)
 
@@ -74,8 +76,8 @@ bondhash ~ keccak256(keccak256(bob), keccak256(unicode"←"), keccak256(alice))
 A basic bond structure then looks like:
 <pre>
 struct BOND {
-    bytes32 source;
-    bytes32 target;
+    bytes32 cation;
+    bytes32 anion;
     bytes32 alias;
     address resolver;
     address controller;
@@ -85,7 +87,7 @@ struct BOND {
 
 Each bond can have multiple hooks. Hooks are enumerable and indexed by `n`. Hooks are labeled by `labelhash ~ keccak256(label)`.
 
-Each hook is a merkle node with a unique `hookhash ~ keccak256(labelhash, bondhash)`, mapping to a contractual relationship `hookhash => contract` between two names (e.g. chat, loan, yield, social, multisig etc etc) 
+Each hook is a merkle node with a unique `hookhash ~ keccak256(labelhash, bondhash)`, mapping to a contractual relationship `hookhash => contract` between two names (e.g. chat, loan, yield, social, multisig etc etc)
 ```
 mapping(bytes32 => address) hooks
 ```
@@ -94,8 +96,8 @@ such that
 <pre>
 struct BOND {
     mapping(bytes32 => address) hooks; <b>←</b>
-    bytes32 source;
-    bytes32 target;
+    bytes32 cation;
+    bytes32 anion;
     bytes32 alias;
     address resolver;
     address controller;
@@ -112,8 +114,8 @@ Since each name will bond to several others with similar configuration, it is me
 <pre>
 struct MOLECULE {
     mapping(bytes32 => address) hooks;
-    bytes32 source;
-    bytes32[] targets; <b>←</b>
+    bytes32 cation;
+    bytes32[] anions; <b>←</b>
     bytes32 alias;
     address resolver;
     address controller;
@@ -128,8 +130,8 @@ Further memory-efficient abstraction is possible by defining increasingly comple
 <pre>
 struct POLYCULE {
     mapping(bytes32 => address[]) hooks; <b>←</b>
-    bytes32 source;
-    bytes32[] targets; <b>←</b>
+    bytes32 cation;
+    bytes32[] anions; <b>←</b>
     bytes32 alias;
     address resolver;
     address controller;
@@ -157,7 +159,7 @@ where `uint8` keeps track of the rules for each hook. In the simplest implementa
 #### register()
 
 Function: `register()` : <span style="color:blue">registers a name for an owner
-    
+
 Syntax: `function register(bytes32 namehash, address owner)`
 
 ### Registry
@@ -167,86 +169,83 @@ Syntax: `function register(bytes32 namehash, address owner)`
 #### ownerOf()
 
 Function: `ownerOf()` : returns the owner of a name
-    
+
 Syntax: `function ownerOf(bytes32 namehash) returns (address);`
 
 #### transfer()
 
 Function: `transfer()` : transfers name to new owner
-    
+
 Syntax: `function transfer(bytes32 namehash, address newOwner);`
 
 #### resolver()
 
 Function: `resolver()` : returns the resolver for a name
-    
+
 Syntax: `function resolver(bytes32 namehash) returns (address);`
 
 #### setResolver()
 
 Function: `setResolver()` : sets the resolver for a  name
-    
+
 Syntax: `function setResolver(bytes32 namehash, address resolver);`
 
 #### getBonds()
 
 Function: `getBonds()` : returns the number of bonds in format `[in, out]` for a name
-    
+
 Syntax: `function getBonds(bytes32 namehash) returns (uint[](2));`
 
 #### getBond()
 
 Function: `getBond()` : returns a bond
-    
+
 Syntax: `function getBond(bytes32 bondhash) returns (bytes32);`
 
 #### bond()
 
 Function: `bond()` : creates a new bond and returns its hash
-    
+
 Syntax: `function bond(bytes32 from, bytes32 to, bytes32 alias) return (bytes32);`
 
 #### getHooks()
 
 Function: `getHooks()` : returns the number of hooks in a bond
-    
+
 Syntax: `function getHookCount(bytes32 bondhash) returns (uint);`
 
 #### getHook()
 
 Function: `getHook()` : returns a hook
-    
+
 Syntax: `function getHook(bytes32 hookhash) returns (address);`
 
 #### hook()
 
 Function: `hook()` : creates a new hook in a link with label
-    
+
 Syntax: `function hook(bytes32 bondhash, bytes32 labelhash);`
 
 #### unbond()
 
 Function: `unbond()` : breaks a bond
-    
+
 Syntax: `function unbond(bytes32 bondhash);`
 
 #### rehook()
 
 Function: `rehook()` : <span style="color:blue">rehooks a hook to a new link
-    
+
 Syntax: `function rehook(bytes32 hookhash, bytes32 newBondhash);`
 
 #### unhook()
 
 Function: `unhook()` : returns `true` after unhooking a hook; returns `false` otherwise
-    
+
 Syntax: `function unhook(bytes32 hookhash) returns (bool);`
 
 #### unhookAll()
 
 Function: `unhookAll()` : returns `true` after unhooking all hooks inside a bond; returns `false` otherwise
-    
+
 Syntax: `function unhookAll(bytes32 bondhash) returns (bool);`
-
-
-
