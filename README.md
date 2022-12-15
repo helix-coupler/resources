@@ -54,7 +54,7 @@ PS: Note that in a heirarchical namespace such as ENS, the labels of subnodes fo
 
 The idea for the architecture is as follows:
 
-#### Name
+### Name
 
 A 'name' is a generic structure in form of
 <pre>
@@ -69,7 +69,7 @@ mapping (namehash => name) names;
 ```
 Native Helix2 names do not have subdomain functionality like ENS since it is a flat namespace by choice although it is capable of importing heirarchical namespaces. The idea is essentially that if one can link names, then one shouldn't need subnodes.
 
-#### Bond & Hook
+### Bond & Hook
 
 Each name can bond to another name (`alice:`  → `bob:`). Bonds are represented by `bondhash` such that for secure bonds:
 ```
@@ -113,7 +113,7 @@ struct BOND {
 
 When unbonding a bond, one must attempt unhooking every hook in the bond.
 
-#### Molecule
+### Molecule
 
 Since each name will bond to several others with similar configuration, it is meaningful to also define a molecule structure that allows for memory-efficient bonding to multiple anions:
 
@@ -129,7 +129,7 @@ struct MOLECULE {
 }
 </pre>
 
-#### Polycule
+### Polycule
 
 Further memory-efficient abstraction is possible by defining increasingly complex structures, if needed:
 
@@ -147,7 +147,7 @@ struct POLYCULE {
 
 The polycule structure is of course the topological superset of [bond, molecule, polycule], i.e. it is possible to derive molecules and bonds from polycules although that'll literally be a gas-guzzling mistake. The seemingly unecessary differentiation between the three is to optimise gas consumption.
 
-### More on Hooks (and Rules)
+#### More on Hooks (and Rules)
 
 Since hooks may be owner-specific, we must flag all hooks that are non-transferable. When a name is transferred, all bonds with non-transferable rule must break. To accomodate this feature, the structure of hooks needs an update to include the rules for them:
 
