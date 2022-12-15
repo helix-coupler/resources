@@ -56,14 +56,20 @@ The idea for the architecture is as follows:
 
 #### Name
 
-Names are represented by `namehash` such that
+Names is a structure in form of
+<pre>
+struct NAME {
+  address owner;
+  address resolver;
+}
+</pre>
+mapped by `namehash ~ keccak256(alice)` such that
 ```
-namehash ~ keccak256(alice)
+mapping (namehash => name) names;
 ```
+Native Helix2 names do not have subdomain functionality like ENS since it is a flat namespace by choice although it is capable of importing heirarchical namespaces. The idea is essentially that if one can link names, then one shouldn't need subnodes.
 
-Native Helix2 names do not have subdomain functionality like ENS since it is a flat namespace by choice although it is capable of importing heirarchical namespaces.
-
-#### Bond (+ Hooks)
+#### Bond & Hook
 
 Each name can bond to another name (`alice:`  → `bob:`). Bonds are represented by `bondhash` such that for equal bonds:
 ```
@@ -107,7 +113,7 @@ struct BOND {
 
 When unbonding a bond, one must attempt unhooking every hook in the bond.
 
-#### MOLECULE
+#### Molecule
 
 Since each name will bond to several others with similar configuration, it is meaningful to also define a molecule structure that allows for memory-efficient bonding to multiple anions:
 
@@ -123,7 +129,7 @@ struct MOLECULE {
 }
 </pre>
 
-#### POLYCULE
+#### Polycule
 
 Further memory-efficient abstraction is possible by defining increasingly complex structures, if needed:
 
