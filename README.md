@@ -240,7 +240,7 @@ Syntax: `function unbond(bytes32 bondhash);`
 
 #### rehook()
 
-Function: `rehook()` : <span style="color:blue">rehooks a hook to a new link
+Function: `rehook()` : rehooks a hook to a new link
 
 Syntax: `function rehook(bytes32 hookhash, bytes32 newBondhash);`
 
