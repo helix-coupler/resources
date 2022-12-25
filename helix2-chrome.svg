@@ -7,80 +7,15 @@
    viewBox="0 0 227.9243 227.9243"
    sodipodi:docname="helix2-chrome.svg"
    inkscape:version="1.1-dev (b39e6d56, 2020-09-19)"
-   inkscape:export-filename="/Users/avneetsingh/Documents/sshmatrix/buidl/helix-coupler/resources/helix2-chrome-small.png"
-   inkscape:export-xdpi="125"
-   inkscape:export-ydpi="125"
+   inkscape:export-filename="/Users/avneetsingh/Documents/sshmatrix/buidl/helix-coupler/resources/helix2-chrome.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs1252">
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient1071">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop1067" />
-      <stop
-         style="stop-color:#000000;stop-opacity:0;"
-         offset="1"
-         id="stop1069" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient1040">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop1036" />
-      <stop
-         style="stop-color:#000000;stop-opacity:0;"
-         offset="1"
-         id="stop1038" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       id="linearGradient989">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop985" />
-      <stop
-         style="stop-color:#000000;stop-opacity:0;"
-         offset="1"
-         id="stop987" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient989"
-       id="linearGradient999"
-       x1="123.98211"
-       y1="199.85575"
-       x2="170.25748"
-       y2="199.85575"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient1040"
-       id="linearGradient1042"
-       x1="276.73969"
-       y1="153.38731"
-       x2="168.97011"
-       y2="113.57516"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient1071"
-       id="linearGradient1073"
-       x1="76.507957"
-       y1="193.74759"
-       x2="196.40411"
-       y2="202.6993"
-       gradientUnits="userSpaceOnUse" />
-  </defs>
+     id="defs1252" />
   <sodipodi:namedview
      pagecolor="#000000"
      bordercolor="#666666"
@@ -96,7 +31,7 @@
      showgrid="false"
      inkscape:zoom="1.5391493"
      inkscape:cx="126.36851"
-     inkscape:cy="81.538549"
+     inkscape:cy="82.188258"
      inkscape:window-x="73"
      inkscape:window-y="25"
      inkscape:window-maximized="0"
@@ -229,83 +164,83 @@
        r="1.9385383"
        transform="rotate(145.66048)" />
     <path
-       style="fill:none;fill-opacity:1;stroke:url(#linearGradient999);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
        d="m 169.75748,228.19276 h -17.25634 v -29.1326 h -28.01903 v -27.54142"
        id="path2187-1"
        sodipodi:nodetypes="ccccc" />
     <g
        id="g1065"
-       style="stroke:url(#linearGradient1073)">
+       style="stroke:#000000;stroke-opacity:1">
       <path
-         style="fill:none;stroke:url(#linearGradient1073);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
          d="m 95.03373,216.42718 v 11.46758 h 22.0154 v 15.20396 h 11.97477 v 12.17437"
          id="path1716"
          sodipodi:nodetypes="cccccc" />
       <g
          id="g1045"
-         style="stroke:url(#linearGradient1073)">
+         style="stroke:#000000;stroke-opacity:1">
         <path
-           style="fill:none;stroke:url(#linearGradient1073);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+           style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
            d="m 92.259023,233.7691 v 8.56215 h 20.116627 v 11.55448"
            id="path1707"
            sodipodi:nodetypes="cccc" />
       </g>
       <path
-         style="fill:none;fill-opacity:1;stroke:url(#linearGradient1073);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
          d="m 150.02597,251.81665 h -13.47751 v -28.37371 h -28.01903 v -23.76298 h -8.51211"
          id="path2187"
          sodipodi:nodetypes="cccccc" />
       <path
-         style="fill:none;fill-opacity:1;stroke:url(#linearGradient1073);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
          d="M 163.30205,242.82331 H 145.2885 V 206.86118 H 117.26947 V 183.0982 h -5.48994"
          id="path2187-6"
          sodipodi:nodetypes="cccccc" />
       <path
-         style="fill:none;fill-opacity:1;stroke:url(#linearGradient1073);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
          d="m 178.09134,209.00712 h -5.91937 v -17.78948 h -28.01903 v -27.16725"
          id="path2187-2"
          sodipodi:nodetypes="ccccc" />
       <path
-         style="fill:none;stroke:url(#linearGradient1073);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
          d="m 166.29944,165.3868 v 20.11662 h 14.02206 v 7.15599"
          id="path1707-0"
          sodipodi:nodetypes="cccc" />
     </g>
     <g
        id="g1026"
-       style="stroke:url(#linearGradient1042);stroke-opacity:1">
+       style="stroke:#000000;stroke-opacity:1">
       <path
-         style="fill:none;stroke:url(#linearGradient1042);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
          d="m 268.63623,116.53594 h -5.91516 V 96.41931 h -11.55448"
          id="path1707-6"
          sodipodi:nodetypes="cccc" />
       <path
-         style="fill:none;stroke:url(#linearGradient1042);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
          d="m 268.50851,133.87786 v -11.46758 h -22.0154 V 107.20632 H 234.51834 V 95.03195"
          id="path1716-6"
          sodipodi:nodetypes="cccccc" />
       <path
-         style="fill:none;fill-opacity:1;stroke:url(#linearGradient1042);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
          d="m 213.51627,98.48839 h 13.47751 v 28.37371 h 28.01903 v 23.76298 h 8.51211"
          id="path2187-8"
          sodipodi:nodetypes="cccccc" />
       <path
-         style="fill:none;fill-opacity:1;stroke:url(#linearGradient1042);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
          d="m 200.24019,107.48173 h 18.01355 v 35.96213 h 28.01903 v 23.76298 h 5.48994"
          id="path2187-6-0"
          sodipodi:nodetypes="cccccc" />
       <path
-         style="fill:none;fill-opacity:1;stroke:url(#linearGradient1042);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
          d="m 191.78476,124.11228 h 17.25634 v 29.1326 h 28.01903 v 27.54142"
          id="path2187-1-2"
          sodipodi:nodetypes="ccccc" />
       <path
-         style="fill:none;fill-opacity:1;stroke:url(#linearGradient1042);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
          d="m 185.4509,141.29792 h 5.91937 v 17.78948 h 28.01903 v 23.38819"
          id="path2187-2-5"
          sodipodi:nodetypes="ccccc" />
       <path
-         style="fill:none;stroke:url(#linearGradient1042);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
          d="m 197.2428,183.89291 v -17.09129 h -15.1565 v -7.15599"
          id="path1707-0-0"
          sodipodi:nodetypes="cccc" />
