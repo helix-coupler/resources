@@ -145,7 +145,7 @@ struct POLYCULE {
 }
 </pre>
 
-The polycule structure is of course the topological superset of [bond, molecule, polycule], i.e. it is possible to derive molecules and bonds from polycules although that'll literally be a gas-guzzling mistake. The seemingly unecessary differentiation between the three is to optimise gas consumption.
+The `polycule` structure is of course the topological superset of [`bond`, `molecule`, `polycule`], i.e. it is possible to derive molecules and bonds from polycules although that'll literally be a gas-guzzling mistake. The seemingly unecessary differentiation between the three is to optimise gas consumption.
 
 #### More on Hooks (and Rules)
 
