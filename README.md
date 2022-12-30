@@ -1,6 +1,6 @@
 # Helix2 Technical Design
 #### <span style="color:grey">authors: keccak256(sshmatrix)
-![](https://raw.githubusercontent.com/helix-coupler/resources/master/helix2-inverse-small.png)
+![](https://raw.githubusercontent.com/helix-coupler/resources/master/logo/helix2-inverse-small.png)
 #### <span style="color:grey">repo: https://github.com/helix-coupler
 ###### tags: `specification` `design` `architecture` `link` `bond`
 # Double Helix (Helix2)
@@ -24,7 +24,7 @@ While the set of nodes form a canonical and natural choice for labeling of addre
 Helix2 (Helix + 2) is motivated roughly by the double helix structure of DNA, where two polynucleotide chains are connected by bonds. The blockchain representation of this structure is two copies of a blockchain connected by secure or unsecure bonds (aka links). All name services so far have been essentially on-chain scalar databases (e.g. ENS, LENS, LNR, CB.ID), meaning that names are simply isolated nodes representable by one label (see figure below).
 
 &nbsp;
-![](https://raw.githubusercontent.com/helix-coupler/resources/master/ens.png)
+![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/ens.png)
 
 Helix2, in comparison, is an on-chain vector database.  In Helix2, names can bond (or link) with one another; bonds (or links) are vectors between names, pointing from one name to another. In succinct, the basic syntax for the namespace is as follows:
 
@@ -45,7 +45,7 @@ Helix2, in comparison, is an on-chain vector database.  In Helix2, names can bon
 6. Lastly, we can define the highest form of abstraction in the form of a 'polycule', which is a molecule comprising of unique bonds between a cation and a set of anions. In a polycule, individual bonds between the cation and anions may be secure, unsecure or a mix of the two.
 
 &nbsp;
-![](https://raw.githubusercontent.com/helix-coupler/resources/master/helix2.png)
+![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2.png)
 &nbsp;
 
 PS: Note that in a heirarchical namespace such as ENS, the labels of subnodes form the leaves of the Merkle tree. Helix2, on the other hand, is an "inverted" Merkle tree in the sense that names are the leaves and linking is the path toward root node from the leaves.
