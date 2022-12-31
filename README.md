@@ -19,7 +19,7 @@ While the set of nodes form a canonical and natural choice for labeling of addre
 
 - A 'bond'  is a closed relationship between two entities that requires explicit approval of both the source and the target. In other words, a bond is a secure link. Alternatively, a link is an unsecure bond.
 
-### Helix2 basics
+## Helix2 basics
 
 Helix2 (Helix + 2) is motivated roughly by the double helix structure of DNA, where two polynucleotide chains are connected by bonds. The blockchain representation of this structure is two copies of a blockchain connected by secure or unsecure bonds (aka links). All name services so far have been essentially on-chain scalar databases (e.g. ENS, LENS, LNR, CB.ID), meaning that names are simply isolated nodes representable by one label (see figure below).
 
@@ -28,133 +28,102 @@ Helix2 (Helix + 2) is motivated roughly by the double helix structure of DNA, wh
 
 Helix2, in comparison, is an on-chain vector database. In Helix2, names can bond (or link) with one another; bonds (or links) are vectors between names, pointing from one name to another. In succinct, the basic syntax for the namespace is as follows:
 
-1. All native objects (names, links, bonds etc) end with `.`, e.g. `alice.`, whereas `.` acts as a trailing marker.
-
-- `.` is therefore a reserved character and cannot be used in any of the name labels.
-
-2. A directional bond between two names `alice:` → `bob:` is represented by `alice?bob:`.
-
-3. Given a bond` alice?bob:`, the source of the bond is called a cation (`alice:`) and the target is called an anion (`bob:`).
-
-4. Further, a bond ` alice?bob:` can be,
-
-- Unsecure bond (link) → when `alice?bob: != bob?alice:`, i.e. when the bond between alice and bob is uni-directional and requires only alice's approval, and
-
-- Secure bond → when `alice?bob: == bob?alice:`, i.e. when the bond between alice and bob is mutual, bi-directional and requires both alice's and bob's approval.
-
-5. Helix2 allows for multi-bonding such that a cation can bond with multiple anions within one data structure instead of creating individual (and costlier) bonds; this structure is called a 'molecule'. In a molecule, individual bonds between a cation and the set of anions may either be secure or unsecure but not a mix of the two.
-
-6. Lastly, we can define the highest form of abstraction in the form of a 'polycule', which is a molecule comprising of unique bonds between a cation and a set of anions. In a polycule, individual bonds between the cation and anions may be secure, unsecure or a mix of the two.
-
 &nbsp;
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2.png)
-&nbsp;
 
-PS: Note that in a heirarchical namespace such as ENS, the labels of subnodes form the leaves of the Merkle tree. Helix2, on the other hand, is an "inverted" Merkle tree in the sense that names are the leaves and linking is the path toward root node from the leaves.
+### Global
 
-## Architecture
+1. All native objects (names, links, bonds etc) end with `.`, e.g. `alice.`, whereas `.` acts as a trailing marker. Consequently, `.` is one of the two reserved characters in Helix2 and cannot be used in any of the object labels (other than as a suffix).
 
-The idea for the architecture is as follows:
+### Names
 
-### Name
-
-A 'name' is a generic structure in form of
 <pre>
 struct NAME {
   address owner;
+  address controller;
   address resolver;
+  uint256 expiry;
 }
 </pre>
-mapped by `namehash ~ keccak256(alice)` such that
-```
-mapping (namehash => name) names;
-```
-Native Helix2 names do not have subdomain functionality like ENS since it is a flat namespace by choice although it is capable of importing heirarchical namespaces. The idea is essentially that if one can link names, then one shouldn't need subnodes.
 
-### Bond & Hook
+2. Helix2 names are similar to ENS names, except that the suffix for them is `.` instead of `.eth`. Helix2 names are not heirarchical, meaning that they cannot have subdomains.
 
-Each name can bond to another name (`alice:`  → `bob:`). Bonds are represented by `bondhash` such that for secure bonds:
-```
-bondhash ~ keccak256(keccak256(bob), keccak256(alice))
-```
-and for unsecure bonds:
-```
-bondhash ~ keccak256(keccak256(bob), keccak256(alice))
-```
-A basic bond structure then looks like:
+- All Helix2 names end with `.` and they have a Resolver and Controller. Note again that `.` is a reserved character and therefore forbidden. Additionally,`_` and `#` are also forbidden.
+
+### Bonds
+
 <pre>
 struct BOND {
-    bytes32 cation;
+    uint8[] rules;
+    mapping(uint8 => address) hooks;
     bytes32 anion;
     bytes32 alias;
     address resolver;
     address controller;
-    bool secure;
+    bool covalence;
+    uint256 expiry;
 }
 </pre>
 
-Each bond can have multiple hooks. Hooks are enumerable and indexed by `n`. Hooks are labeled by `labelhash ~ keccak256(label)`.
+3. A directional bond between two names `alice.` → `bob.` is labeled by its alias `alias`. Bonds start with `_`, end with`.` and can be queried by their alias prefixed with `_`, e.g. `_alias.`
 
-Each hook is a merkle node with a unique `hookhash ~ keccak256(labelhash, bondhash)`, mapping to a contractual relationship `hookhash => contract` between two names (e.g. chat, loan, yield, social, multisig etc etc)
-```
-mapping(bytes32 => address) hooks
-```
-such that
+4. The source of the bond is called a cation (`alice.`) and the target is called an anion (`bob.`).
 
-<pre>
-struct BOND {
-    mapping(bytes32 => address) hooks; <b>←</b>
-    bytes32 cation;
-    bytes32 anion;
-    bytes32 alias;
-    address resolver;
-    address controller;
-    bool secure;
-}
-</pre>
+5. Further, `covalence` flag determines whether the bond is 'secure' or 'unsecure'.
 
-When unbonding a bond, one must attempt unhooking every hook in the bond.
+- a bond between alice and bob is insecure when it is uni-directional and requires only alice's approval, or a
+- a bond between alice and bob is secure it is mutual, bi-directional and requires both alice's and bob's approval.
 
-### Molecule
+#### Hooks & Rules
 
-Since each name will bond to several others with similar configuration, it is meaningful to also define a molecule structure that allows for memory-efficient bonding to multiple anions:
+7. The most important feature of bonds are `hooks` and `rules`, which quantify the link between two names and give meaning to the `_` representation. Hooks are contractual definitions between two names:` mapping(uint8 => address)`, mediated by ordered one-to-one mapping inside rules: `uint8[] rules`
+
+- To query a hook inside `hooks` for a bond, one needs its associated `rule`, which is a `uint8` identifier mapping to the contractual address `hook`. Hooks are thus queryable as `_alias.rule.`, e.g. `_alias.404.`
+
+- A trivial application of a hook is a payment router, i.e. payment sent to `0` hook `alias_.0.` is routed to the address of `bob`. More on hooks in upcoming sections.
+
+### Molecules
 
 <pre>
 struct MOLECULE {
-    mapping(bytes32 => address) hooks;
-    bytes32 cation;
-    bytes32[] anions; <b>←</b>
+    uint8[] rules;
+    mapping(uint8 => address) hooks;
+    bytes32[] anions;
     bytes32 alias;
     address resolver;
     address controller;
-    bool secure;
+    bool covalence;
+    uint256 expiry;
 }
 </pre>
 
-### Polycule
+8. Helix2 allows for multi-bonding such that a cation can bond with multiple anions within one data structure instead of creating individual (and costlier) bonds; this structure is called a 'molecule' (or 'moly' in short). In a molecule, all individual bonds share the same covalence.
 
-Further memory-efficient abstraction is possible by defining increasingly complex structures, if needed:
+9.  Other features of a molecule are similar to that of a bond, e.g. a molecule can have an alias and hooks. To denote a bond with alias `alias`, we use two consecutive `__` characters, i.e. `__alias.` without refering to an anion since molecules are anion-agnostic and hook-independent. By using `__alias.rule.`, one can refer to a unique hook for a molecule.
+
+### Polycules
 
 <pre>
 struct POLYCULE {
-    mapping(bytes32 => address[]) hooks; <b>←</b>
-    bytes32 cation;
-    bytes32[] anions; <b>←</b>
+    uint8[] rules;
+    mapping(uint8 => address) hooks;
+    bytes32[] anions;
     bytes32 alias;
     address resolver;
     address controller;
-    bool[] secure; <b>←</b>
+    bool covalence;
+    uint256 expiry;
 }
 </pre>
 
-The `polycule` structure is of course the topological superset of [`bond`, `molecule`, `polycule`], i.e. it is possible to derive molecules and bonds from polycules although that'll literally be a gas-guzzling mistake. The seemingly unecessary differentiation between the three is to optimise gas consumption.
+10. Lastly, we can define another useful abstraction in the form of a 'polycule', which is a molecule comprising of unique bonds between a cation and a set of anions. In a polycule, all individual bonds share the same covalence despite being unique. In short, `rules.length == anions.length`, and `rules` & `anions` are a one-to-one map.
 
-#### More on Hooks (and Rules)
+11. Other features of a molecule are similar to that of a molecule. To denote a bond with alias `alias`, we use three consecutive `___` characters, i.e. `___alias.`  etc. By using `__alias.rule.`, one can refer to a unique hook for a molecule by its `rule`. Alternatively, one can refer to a unique anion in a molecule by its indexed `rule`, e.g. `___alias.anion.`
 
-Since hooks may be owner-specific, we must flag all hooks that are non-transferable. When a name is transferred, all bonds with non-transferable rule must break. To accomodate this feature, the structure of hooks needs an update to include the rules for them:
+&nbsp;
+![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2-struct.png)
+&nbsp;
 
-<pre>
-mapping(bytes32 => mapping(uint8 => address[])) hooks;
-</pre>
+The `molecule` structure is of course the topological superset of [`name`, `bond`, `polycule`], i.e. it is possible to derive polycules and bonds from molecules although that'll literally be a gas-guzzling mistake. The seemingly unecessary differentiation between the three is to optimise gas consumption.
 
-where `uint8` keeps track of the rules for each hook. In the simplest implementation when there are only two rules (transferable or otherwise), `bool` is a more natural choice. In order to allow for multiple rules however, we choose `uint8` (`non-transferable = 0`; `0 < transferable <= 2^8`).
+Note that in a heirarchical namespace such as ENS, the labels of subnodes form the leaves of the Merkle tree. Helix2, on the other hand, is an "inverted" Merkle tree in the sense that names are the leaves and linking is the path toward root node from the leaves.
