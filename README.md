@@ -13,20 +13,20 @@ For instance, Ethereum Name Service (ENS) is the first major on-chain name servi
 
 While the set of nodes form a canonical and natural choice for labeling of addresses on any blockchain, the observation nonetheless is that most nodes do not interact with each other on chain. In fact, most wallets have a limited set of interactions with contracts and addresses. Keeping this in mind, we attempt to provide Ethereum with a next-generation 'link service', in addition to the name service already provided by ENS. The expected result of Helix2 service is a link-native naming ecosystem where an interaction between two names is representable on-chain similar to a human-readable name for an address. In addition, it comes with several structural features such as private payments, social graphs, DAOs etc. Note that while Helix2 has its own namespace, it does not replace ENS and is in fact intended to work alongside ENS as an extension. Lastly, Helix2 is not the only link service in the works; [Woolball](https://woolball.xyz) is another link service currently under development although the two implementations arguably have more differences than similarities.
 
-#### Link vs Bond?
+#### Definitions
 
-- A 'link' is an open relationship between two entities where one entity (source) may set the link with or without explicit approval of the other (target).
+a) A 'link' is an open relationship between two entities where one entity (source) may set the link with or without explicit approval of the other (target).
 
-- A 'bond'  is a closed relationship between two entities that requires explicit approval of both the source and the target. In other words, a bond is a secure link. Alternatively, a link is an unsecure bond.
+b) A 'bond'  is a closed relationship between two entities that requires explicit approval of both the source and the target. In other words, a bond is a secure link. Alternatively, a link is an unsecure bond. All bonds are links but not all links are bonds.
 
 ## Helix2 basics
 
-Helix2 (Helix + 2) is motivated roughly by the double helix structure of DNA, where two polynucleotide chains are connected by bonds. The blockchain representation of this structure is two copies of a blockchain connected by secure or unsecure bonds (aka links). All name services so far have been essentially on-chain scalar databases (e.g. ENS, LENS, LNR, CB.ID), meaning that names are simply isolated nodes representable by one label (see figure below).
+Helix2 (Helix + 2) is motivated roughly by the double helix structure of DNA, where two polynucleotide chains are connected by bonds. The blockchain representation of this structure is two copies of a blockchain connected by secure bonds or unsecure links. All name services so far have been essentially on-chain scalar databases (e.g. ENS, LENS, LNR, CB.ID), meaning that names are simply isolated nodes representable by one label (see figure below).
 
 &nbsp;
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/ens.png)
 
-Helix2, in comparison, is an on-chain vector database. In Helix2, names can bond (or link) with one another; bonds (or links) are vectors between names, pointing from one name to another. In succinct, the basic syntax for the namespace is as follows:
+Helix2, in comparison, is an on-chain vector database. In Helix2, names can bond (or link) with one another; bonds are vectors between names, pointing from one name to another. In succinct, the basic syntax for the namespace is as follows.
 
 &nbsp;
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2.png)
@@ -50,7 +50,7 @@ struct NAME {
 
 - All Helix2 names end with `.` and they have a Resolver and Controller. Note again that `.` is a reserved character and therefore forbidden. Additionally,`_` and `#` are also forbidden.
 
-### Bonds
+### Bonds (& Links)
 
 <pre>
 struct BOND {
@@ -69,10 +69,10 @@ struct BOND {
 
 4. The source of the bond is called a cation (`alice.`) and the target is called an anion (`bob.`).
 
-5. Further, `covalence` flag determines whether the bond is 'secure' or 'unsecure'.
+5. Further, `covalence` flag determines whether the bond is 'secure' or 'unsecure' (i.e. when the bond is in fact a link). To reiterate,
 
 - a bond between alice and bob is insecure when it is uni-directional and requires only alice's approval, or a
-- a bond between alice and bob is secure it is mutual, bi-directional and requires both alice's and bob's approval.
+- a bond between alice and bob is secure when it is mutual, bi-directional and requires both alice's and bob's approval.
 
 #### Hooks & Rules
 
