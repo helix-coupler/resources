@@ -1,17 +1,17 @@
 # Helix2 Technical Design
-#### <span style="color:grey">authors: keccak256(sshmatrix)
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/logo/helix2-inverse-small.png)
-#### <span style="color:grey">repo: https://github.com/helix-coupler
+#### Author: `sshmatrix`
+#### Links: [[GitHub](https://github.com/helix-coupler)]  [[.ETH](https://helix2.eth.limo)]  [[.XYZ](https://helix2.xyz)]
 ###### tags: `specification` `design` `architecture` `link` `bond`
 # Double Helix (Helix2)
 
-Double Helix (Helix2) is an on-chain node-coupling protocol designed to link and/or bind names. Most blockchains have developed their versions of a naming system which allows representing addresses with human-readable names. Helix2 is designed as a possible next-generation successor of these name services.
+Double Helix ([Helix2](https://helix2.xyz)) is an on-chain node-coupling protocol designed to link and/or bind names. Most blockchains have developed their versions of a naming system which allows representing addresses with human-readable names. Helix2 is designed as a possible next-generation successor of these name services.
 
-For instance, Ethereum Name Service (ENS) is the first major on-chain name service on Ethereum in the form of a heirarchical Merkle tree-like data structure. Like all name services, it focuses on assigning names to the nodes (usually addresses) on the blockchain. Double Helix, or Helix2, now aims to standardise on-chain representation of links/bonds in addition to names.
+For instance, Ethereum Name Service (ENS) is the first major on-chain name service on Ethereum in the form of a heirarchical Merkle tree-like data structure. Like all name services, it focuses on assigning names to the nodes (usually addresses) on the blockchain. Double Helix, or Helix2, now aims to standardise on-chain representation of links and bonds in addition to names.
 
 ### Extending nodes to links and bonds
 
-While the set of nodes form a canonical and natural choice for labeling of addresses on any blockchain, the observation nonetheless is that most nodes do not interact with each other on-chain. In fact, most wallets have a limited set of interactions with contracts and addresses. Keeping this in mind, we attempt to provide Ethereum with a next-generation 'linking service', in addition to the name service already provided by ENS. The expected result of Helix2 service is a link-native naming ecosystem where an interaction between two names is representable on-chain similar to a human-readable name for an address. In addition, it comes with several structural features such as private payments, social graphs, DAOs etc. Note that while Helix2 has its own namespace, it does not replace ENS and is in fact intended to work alongside ENS as an extension.
+While the set of nodes form a canonical and natural choice for labeling of addresses on any blockchain, the observation nonetheless is that most nodes do not interact with each other on chain. In fact, most wallets have a limited set of interactions with contracts and addresses. Keeping this in mind, we attempt to provide Ethereum with a next-generation 'link service', in addition to the name service already provided by ENS. The expected result of Helix2 service is a link-native naming ecosystem where an interaction between two names is representable on-chain similar to a human-readable name for an address. In addition, it comes with several structural features such as private payments, social graphs, DAOs etc. Note that while Helix2 has its own namespace, it does not replace ENS and is in fact intended to work alongside ENS as an extension. Lastly, Helix2 is not the only link service in the works; [Woolball](https://woolball.xyz) is another link service currently under development although the two implementations arguably have more differences than similarities.
 
 #### Link vs Bond?
 
@@ -26,9 +26,11 @@ Helix2 (Helix + 2) is motivated roughly by the double helix structure of DNA, wh
 &nbsp;
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/ens.png)
 
-Helix2, in comparison, is an on-chain vector database.  In Helix2, names can bond (or link) with one another; bonds (or links) are vectors between names, pointing from one name to another. In succinct, the basic syntax for the namespace is as follows:
+Helix2, in comparison, is an on-chain vector database. In Helix2, names can bond (or link) with one another; bonds (or links) are vectors between names, pointing from one name to another. In succinct, the basic syntax for the namespace is as follows:
 
-1. All native objects (names, links, bonds etc) end with `:`, e.g. `alice:`, whereas `:` acts as a trailing marker.
+1. All native objects (names, links, bonds etc) end with `.`, e.g. `alice.`, whereas `.` acts as a trailing marker.
+
+- `.` is therefore a reserved character and cannot be used in any of the name labels.
 
 2. A directional bond between two names `alice:` → `bob:` is represented by `alice?bob:`.
 
