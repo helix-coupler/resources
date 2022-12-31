@@ -523,9 +523,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.33441537"
-     inkscape:cx="321.45652"
-     inkscape:cy="384.25267"
+     inkscape:zoom="0.3821522"
+     inkscape:cx="665.96502"
+     inkscape:cy="553.44441"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -551,13 +551,17 @@
        height="146.70592"
        x="32.482197"
        y="133.85394"
-       rx="1.4784831" />
+       rx="1.4784831"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <g
        id="g997"
        transform="matrix(0.99629272,0,0,0.96731861,8.3698561,-2.4074902)" />
     <g
        id="g2332"
-       transform="matrix(0.97516307,0,0,0.97516307,5.8450739,3.6928151)">
+       transform="matrix(0.97516307,0,0,0.97516307,5.8450739,3.6928151)"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
       <rect
          style="opacity:0.302251;fill:#0046ff;fill-opacity:0.157258;fill-rule:evenodd;stroke:none;stroke-width:0.711942;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:4.0564;paint-order:stroke fill markers;stop-color:#000000"
          id="rect976"
@@ -1224,7 +1228,9 @@
        height="256.53601"
        x="197.43465"
        y="24.023739"
-       rx="1.4602687" />
+       rx="1.4602687"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <rect
        style="opacity:0.302251;fill:#0054ff;fill-opacity:0.317647;fill-rule:evenodd;stroke:none;stroke-width:0.463496;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:4.0564;paint-order:stroke fill markers;stop-color:#000000"
        id="rect976-5-8-2-9"
