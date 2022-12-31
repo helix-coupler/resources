@@ -15,13 +15,13 @@ While the set of nodes form a canonical and natural choice for labeling of addre
 
 #### Definitions
 
-a) A 'link' is an open relationship between two entities where one entity (source) may set the link with or without explicit approval of the other (target).
+a) A 'link' is an open relationship between two entities where one entity (source) may set the link with or without explicit approval of the other (target),
 
 b) A 'bond'  is a closed relationship between two entities that requires explicit approval of both the source and the target. In other words, a bond is a secure link. Alternatively, a link is an unsecure bond. All bonds are links but not all links are bonds.
 
 ## Helix2 basics
 
-Helix2 (Helix + 2) is motivated roughly by the double helix structure of DNA, where two polynucleotide chains are connected by bonds. The blockchain representation of this structure is two copies of a blockchain connected by secure bonds or unsecure links. All name services so far have been essentially on-chain scalar databases (e.g. ENS, LENS, LNR, CB.ID), meaning that names are simply isolated nodes representable by one label (see figure below).
+Helix2 (Helix + 2) is motivated roughly by the double helix structure of DNA, where two polynucleotide chains are connected by bonds. The blockchain representation of this structure is two copies of a blockchain connected by secure bonds or unsecure links. All name services so far have been essentially on-chain scalar databases (e.g. ENS, LENS, LNR, CB.ID), meaning that names are simply isolated nodes representable by one label (see figure below)
 
 &nbsp;
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/ens.png)
@@ -33,7 +33,7 @@ Helix2, in comparison, is an on-chain vector database. In Helix2, names can bond
 
 ### Global
 
-1. All native objects (names, links, bonds etc) end with `.`, e.g. `alice.`, whereas `.` acts as a trailing marker. Consequently, `.` is one of the two reserved characters in Helix2 and cannot be used in any of the object labels (other than as a suffix).
+All native objects (names, links, bonds etc) end with `.`, e.g. `alice.`, whereas `.` acts as a trailing marker. Consequently, `.` is one of the two reserved characters in Helix2 and cannot be used in any of the object labels (other than as a suffix)
 
 ### Names
 
@@ -46,7 +46,7 @@ struct NAME {
 }
 </pre>
 
-2. Helix2 names are similar to ENS names, except that the suffix for them is `.` instead of `.eth`. Helix2 names are not heirarchical, meaning that they cannot have subdomains.
+Helix2 names are similar to ENS names, except that the suffix for them is `.` instead of `.eth`. Helix2 names are not heirarchical, meaning that they cannot have subdomains.
 
 - All Helix2 names end with `.` and they have a Resolver and Controller. Note again that `.` is a reserved character and therefore forbidden. Additionally,`_` and `#` are also forbidden.
 
@@ -65,21 +65,20 @@ struct BOND {
 }
 </pre>
 
-3. A directional bond between two names `alice.` → `bob.` is labeled by its alias `alias`. Bonds start with `_`, end with`.` and can be queried by their alias prefixed with `_`, e.g. `_alias.`
+A directional bond between two names `alice.` → `bob.` is labeled by its alias `alias`. Bonds start with `_`, end with`.` and can be queried by their alias prefixed with `_`, e.g. `_alias.`
 
-4. The source of the bond is called a cation (`alice.`) and the target is called an anion (`bob.`).
+The source of the bond is called a cation (`alice.`) and the target is called an anion (`bob.`)
 
-5. Further, `covalence` flag determines whether the bond is 'secure' or 'unsecure' (i.e. when the bond is in fact a link). To reiterate,
+Further, `covalence` flag determines whether the bond is 'secure' or 'unsecure' (i.e. when the bond is in fact a link). To reiterate,
 
 - a bond between alice and bob is insecure when it is uni-directional and requires only alice's approval, or a
-- a bond between alice and bob is secure when it is mutual, bi-directional and requires both alice's and bob's approval.
+- a bond between alice and bob is secure when it is mutual, bi-directional and requires both alice's and bob's approval
 
 #### Hooks & Rules
 
-7. The most important feature of bonds are `hooks` and `rules`, which quantify the link between two names and give meaning to the `_` representation. Hooks are contractual definitions between two names:` mapping(uint8 => address)`, mediated by ordered one-to-one mapping inside rules: `uint8[] rules`
+The most important feature of bonds are `hooks` and `rules`, which quantify the link between two names and give meaning to the `_` representation. Hooks are contractual definitions between two names:` mapping(uint8 => address)`, mediated by ordered one-to-one mapping inside rules: `uint8[] rules`
 
 - To query a hook inside `hooks` for a bond, one needs its associated `rule`, which is a `uint8` identifier mapping to the contractual address `hook`. Hooks are thus queryable as `_alias#rule.`, e.g. `_alias#404.`
-
 - A trivial application of a hook is a payment router, i.e. payment sent to `0` hook `alias_#0.` is routed to the address of `bob.`. More on hooks in upcoming sections.
 
 ### Molecules
@@ -97,9 +96,9 @@ struct MOLECULE {
 }
 </pre>
 
-8. Helix2 allows for multi-bonding such that a cation can bond with multiple anions within one data structure instead of creating individual (and costlier) bonds; this structure is called a 'molecule' (or 'moly' in short). In a molecule, all individual bonds share the same covalence.
+Helix2 allows for multi-bonding such that a cation can bond with multiple anions within one data structure instead of creating individual (and costlier) bonds; this structure is called a 'molecule' (or 'moly' in short). In a molecule, all individual bonds share the same covalence.
 
-9.  Other features of a molecule are similar to that of a bond, e.g. a molecule can have an alias and hooks. To denote a bond with alias `alias`, we use two consecutive `__` characters, i.e. `__alias.` without refering to an anion since molecules are anion-agnostic and hook-independent. By using `__alias#rule.`, one can refer to a unique hook for a molecule.
+Other features of a molecule are similar to that of a bond, e.g. a molecule can have an alias and hooks. To denote a bond with alias `alias`, we use two consecutive `__` characters, i.e. `__alias.` without refering to an anion since molecules are anion-agnostic and hook-independent. By using `__alias#rule.`, one can refer to a unique hook for a molecule.
 
 ### Polycules
 
@@ -116,9 +115,9 @@ struct POLYCULE {
 }
 </pre>
 
-10. Lastly, we can define another useful abstraction in the form of a 'polycule', which is a molecule comprising of unique bonds between a cation and a set of anions. In a polycule, all individual bonds share the same covalence despite being unique. In short, `rules.length == anions.length`, and `rules` & `anions` are a one-to-one map.
+Lastly, we can define another useful abstraction in the form of a 'polycule', which is a molecule comprising of unique bonds between a cation and a set of anions. In a polycule, all individual bonds share the same covalence despite being unique. In short, `rules.length == anions.length`, and `rules` & `anions` are a one-to-one map.
 
-11. Other features of a molecule are similar to that of a molecule. To denote a bond with alias `alias`, we use three consecutive `___` characters, i.e. `___alias.`  etc. By using `___alias#rule.`, one can refer to a unique hook for a molecule by its `rule`. Alternatively, one can refer to a unique anion in a molecule by its indexed `rule`, e.g. `___alias#anion[rule]`
+Other features of a molecule are similar to that of a molecule. To denote a bond with alias `alias`, we use three consecutive `___` characters, i.e. `___alias.`  etc. By using `___alias#rule.`, one can refer to a unique hook for a molecule by its `rule`. Alternatively, one can refer to a unique anion in a molecule by its indexed `rule`, e.g. `___alias#anion[rule]`
 
 &nbsp;
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2-struct.png)
