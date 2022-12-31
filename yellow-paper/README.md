@@ -76,7 +76,7 @@ Further, `covalence` flag determines whether the bond is 'secure' or 'unsecure' 
 
 ### Hooks & Rules
 
-The most important feature of bonds are `hooks` and `rules`, which quantify the link between two names and give meaning to the `_` representation. Hooks are contractual definitions between two names:` mapping(uint8 => address)`, mediated by ordered one-to-one mapping inside rules: `uint8[] rules`
+The most important feature of bonds are `hooks` and `rules`, which quantify the link between two names and give meaning to the `_` representation. Hooks are contractual definitions between two names: `mapping(uint8 => address)`, mediated by ordered one-to-one mapping inside rules: `uint8[] rules`
 
 - To query a hook inside `hooks` for a bond, one needs its associated `rule`, which is a `uint8` identifier mapping to the contractual address `hook`. Hooks are thus queryable as `_alias#rule.`, e.g. `_alias#404.`
 - A trivial application of a hook is a payment router, i.e. payment sent to `0` hook `alias_#0.` is routed to the address of `bob.`. More on hooks in upcoming sections.
