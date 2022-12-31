@@ -78,9 +78,9 @@ struct BOND {
 
 7. The most important feature of bonds are `hooks` and `rules`, which quantify the link between two names and give meaning to the `_` representation. Hooks are contractual definitions between two names:` mapping(uint8 => address)`, mediated by ordered one-to-one mapping inside rules: `uint8[] rules`
 
-- To query a hook inside `hooks` for a bond, one needs its associated `rule`, which is a `uint8` identifier mapping to the contractual address `hook`. Hooks are thus queryable as `_alias.rule.`, e.g. `_alias.404.`
+- To query a hook inside `hooks` for a bond, one needs its associated `rule`, which is a `uint8` identifier mapping to the contractual address `hook`. Hooks are thus queryable as `_alias#rule.`, e.g. `_alias#404.`
 
-- A trivial application of a hook is a payment router, i.e. payment sent to `0` hook `alias_.0.` is routed to the address of `bob`. More on hooks in upcoming sections.
+- A trivial application of a hook is a payment router, i.e. payment sent to `0` hook `alias_#0.` is routed to the address of `bob.`. More on hooks in upcoming sections.
 
 ### Molecules
 
@@ -99,7 +99,7 @@ struct MOLECULE {
 
 8. Helix2 allows for multi-bonding such that a cation can bond with multiple anions within one data structure instead of creating individual (and costlier) bonds; this structure is called a 'molecule' (or 'moly' in short). In a molecule, all individual bonds share the same covalence.
 
-9.  Other features of a molecule are similar to that of a bond, e.g. a molecule can have an alias and hooks. To denote a bond with alias `alias`, we use two consecutive `__` characters, i.e. `__alias.` without refering to an anion since molecules are anion-agnostic and hook-independent. By using `__alias.rule.`, one can refer to a unique hook for a molecule.
+9.  Other features of a molecule are similar to that of a bond, e.g. a molecule can have an alias and hooks. To denote a bond with alias `alias`, we use two consecutive `__` characters, i.e. `__alias.` without refering to an anion since molecules are anion-agnostic and hook-independent. By using `__alias#rule.`, one can refer to a unique hook for a molecule.
 
 ### Polycules
 
@@ -118,12 +118,12 @@ struct POLYCULE {
 
 10. Lastly, we can define another useful abstraction in the form of a 'polycule', which is a molecule comprising of unique bonds between a cation and a set of anions. In a polycule, all individual bonds share the same covalence despite being unique. In short, `rules.length == anions.length`, and `rules` & `anions` are a one-to-one map.
 
-11. Other features of a molecule are similar to that of a molecule. To denote a bond with alias `alias`, we use three consecutive `___` characters, i.e. `___alias.`  etc. By using `__alias.rule.`, one can refer to a unique hook for a molecule by its `rule`. Alternatively, one can refer to a unique anion in a molecule by its indexed `rule`, e.g. `___alias.anion.`
+11. Other features of a molecule are similar to that of a molecule. To denote a bond with alias `alias`, we use three consecutive `___` characters, i.e. `___alias.`  etc. By using `___alias#rule.`, one can refer to a unique hook for a molecule by its `rule`. Alternatively, one can refer to a unique anion in a molecule by its indexed `rule`, e.g. `___alias#anion[rule]`
 
 &nbsp;
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2-struct.png)
 &nbsp;
 
-The `molecule` structure is of course the topological superset of [`name`, `bond`, `polycule`], i.e. it is possible to derive polycules and bonds from molecules although that'll literally be a gas-guzzling mistake. The seemingly unecessary differentiation between the three is to optimise gas consumption.
+The `molecule` structure is the topological superset of [`name`, `bond`, `polycule`], i.e. it is possible to derive polycules and bonds from molecules although that'll literally be a gas-guzzling mistake. The seemingly unecessary differentiation between the three is to optimise gas consumption.
 
 Note that in a heirarchical namespace such as ENS, the labels of subnodes form the leaves of the Merkle tree. Helix2, on the other hand, is an "inverted" Merkle tree in the sense that names are the leaves and linking is the path toward root node from the leaves.
