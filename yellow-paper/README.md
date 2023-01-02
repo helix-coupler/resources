@@ -37,6 +37,10 @@ Helix2 (Helix + 2) is roughly motivated by the double helix structure of DNA, wh
 
 - A **polycule** is a special type of molecule in which each individual bond between the cation and its several anions is unique. An example of a polycule is the set of private channels in a Discord server, where each channel may have its unique requirements as well as unique participating members.
 
+- A **hook** is a contractual (or non-contractual) relationship between two names and represented by the contract address that mediates the relationship between two names. For non-contractual relationships, `0x0` hook is used. Hooks must always accompany their set of rules which act as calldata for the hook.
+
+- A **rule** is an identifier which encodes the relationship between two names and must accompany a hook as its calldata.
+
 ## Helix2 Design
 
 ### Ethereum Name Service (ENS)
@@ -48,7 +52,7 @@ All name services so far have essentially been on-chain scalar databases (e.g. E
 
 ### Helix2 Service
 
-Helix2 is essentially two services under one protocol: a native namespace providing a name service and a link service for that underlying namespace. Helix2 is an on-chain vector database. In Helix2, names can bond (or link) with one another; bonds are vectors between names, pointing from one name to another -- this is the core premise of Helix2 protocol and essentially what separates it from other services. Helix2 names are not heirarchical, meaning that they cannot have subdomains, i.e. Helix2 is a flat namespace. Subdomains are not neccessary in Helix2 since linking provides the same features without constraining the relationships between nodes to within one parent node's heirarchy. This is the only significant divergence of Helix2 namespace from ENS. In addition to this flat namespace, Helix2 has an additional 'linkspace' which is the core utility of the protocol.
+Helix2 is essentially two services under one protocol: a native namespace providing a name service and a link service for that underlying namespace. Helix2 is an on-chain vector database. In Helix2, names can bond (or link) with one another; bonds are vectors between names, pointing from one name to another - this is the core premise of Helix2 protocol and essentially what separates it from other services. Helix2 names are not heirarchical, meaning that they cannot have subdomains, i.e. Helix2 is a flat namespace. Subdomains are not neccessary in Helix2 since linking provides the same features without constraining the relationships between nodes to within one parent node's heirarchy. This is the only significant divergence of Helix2 namespace from ENS. In addition to this flat namespace, Helix2 has an additional 'linkspace' which is the core utility of the protocol.
 
 &nbsp;
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2.png)
