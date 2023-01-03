@@ -186,7 +186,7 @@ By design, Helix2 molecules are a perfect fit for multi-sig vault management. Mo
 
 #### Stealth payments
 
-Helix2 hooks can be configured for bonds to receive stealth payments to a name via a stealth protocol such as [Umbra Protocol](https://github.com/ScopeLift/umbra-protocol).
+Helix2 hooks can be configured for bonds to receive stealth payments to a name via a stealth protocol such as [Umbra Protocol](https://github.com/ScopeLift/umbra-protocol) or [zkAztec](https://zk.money/). Note that this feature is also possible with ENS Resolver.
 
 #### Web3 social graphs
 
@@ -204,9 +204,9 @@ Helix2 molecules are a canonical fit for DAO governance and associated tooling w
 
 Other possible usecases include
 
-- a unified web3 individual and group identity system,
+- a unified web3 individual and group reputation system,
 - proof-of-humanness by defining human-specific hooks in molecules or polycules,
-- and perhaps anything and everything that requires coordination in groups.
+- and perhaps anything and everything that requires structuring in groups.
 
 ## Future progress
 
