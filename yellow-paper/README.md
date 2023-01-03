@@ -76,7 +76,7 @@ struct NAME {
 
 Helix2 names are similar to ENS names, except that the suffix for them is `.` instead of `.eth`. Helix2 names are not heirarchical, meaning that they cannot have subdomains.
 
-- All Helix2 names end with `.` and they have a Resolver and Controller. Note again that `.` is a reserved character and therefore forbidden. Additionally,`_` and `#` are also forbidden.
+- All Helix2 names end with `.` and they have a Resolver and Controller. Note again that `.` is a reserved character and therefore forbidden. Additionally,`-` and `#` are also forbidden.
 
 #### Importing ENS names
 
@@ -97,7 +97,7 @@ struct BOND {
 }
 </pre>
 
-A directional bond between two names `alice.` → `bob.` is labeled by its alias `alias`. Bonds start with `_`, end with`.` and can be queried by their alias prefixed with `_`, e.g. `_alias.`
+A directional bond between two names `alice.` → `bob.` is labeled by its alias `alias`. Bonds start with `-`, end with`.` and can be queried by their alias prefixed with `-`, e.g. `-alias.`
 
 The source of the bond is called a cation (`alice.`) and the target is called an anion (`bob.`)
 
@@ -108,10 +108,10 @@ Further, `covalence` flag determines whether the bond is 'secure' or 'unsecure' 
 
 ### Hooks & Rules
 
-The most important feature of bonds are `hooks` and `rules`, which quantify the link between two names and give meaning to the `_` representation. Hooks are contractual definitions between two names: `mapping(uint8 => address)`, mediated by ordered one-to-one mapping inside rules: `uint8[] rules`
+The most important feature of bonds are `hooks` and `rules`, which quantify the link between two names and give meaning to the `-` representation. Hooks are contractual definitions between two names: `mapping(uint8 => address)`, mediated by ordered one-to-one mapping inside rules: `uint8[] rules`
 
-- To query a hook inside `hooks` for a bond, one needs its associated `rule`, which is a `uint8` identifier mapping to the contractual address `hook`. Hooks are thus queryable as `_alias#rule.`, e.g. `_alias#404.`
-- A trivial application of a hook is a payment router, i.e. payment sent to `0` hook `alias_#0.` is routed to the address of `bob.`. More on hooks in upcoming sections.
+- To query a hook inside `hooks` for a bond, one needs its associated `rule`, which is a `uint8` identifier mapping to the contractual address `hook`. Hooks are thus queryable as `-alias#rule.`, e.g. `-alias#404.`
+- A trivial application of a hook is a payment router, i.e. payment sent to `0` hook `alias-#0.` is routed to the address of `bob.`; more on hooks in upcoming sections.
 
 ### Molecules
 
@@ -130,7 +130,7 @@ struct MOLECULE {
 
 Helix2 allows for multi-bonding such that a cation can bond with multiple anions within one data structure instead of creating individual (and costlier) bonds; this structure is called a 'molecule' (or 'moly' in short). In a molecule, all individual bonds share the same covalence.
 
-Other features of a molecule are similar to that of a bond, e.g. a molecule can have an alias and hooks. To denote a bond with alias `alias`, we use two consecutive `__` characters, i.e. `__alias.` without refering to an anion since molecules are anion-agnostic and hook-independent. By using `__alias#rule.`, one can refer to a unique hook for a molecule.
+Other features of a molecule are similar to that of a bond, e.g. a molecule can have an alias and hooks. To denote a bond with alias `alias`, we use two consecutive `--` characters, i.e. `--alias.` without refering to an anion since molecules are anion-agnostic and hook-independent. By using `--alias#rule.`, one can refer to a unique hook for a molecule.
 
 ### Polycules
 
@@ -149,7 +149,7 @@ struct POLYCULE {
 
 Lastly, we can define another useful abstraction in the form of a 'polycule', which is a molecule comprising of unique bonds between a cation and a set of anions. In a polycule, all individual bonds share the same covalence despite being unique. In short, `rules.length == anions.length`, and `rules` & `anions` are a one-to-one map.
 
-Other features of a molecule are similar to that of a molecule. To denote a bond with alias `alias`, we use three consecutive `___` characters, i.e. `___alias.`  etc. By using `___alias#rule.`, one can refer to a unique hook for a molecule by its `rule`. Alternatively, one can refer to a unique anion in a molecule by its indexed `rule`, e.g. `___alias#anion[rule]`
+Other features of a molecule are similar to that of a molecule. To denote a bond with alias `alias`, we use three consecutive `---` characters, i.e. `---alias.`  etc. By using `---alias#rule.`, one can refer to a unique hook for a molecule by its `rule`. Alternatively, one can refer to a unique anion in a molecule by its indexed `rule`, e.g. `---alias#anion[rule]`
 
 &nbsp;
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2-struct.png)
@@ -161,7 +161,11 @@ The `molecule` structure is the topological superset of [`name`, `bond`, `polycu
 
 ## Contracts
 
+Helix2 protocol is schematically presented below for ease of understanding.
 
+&nbsp;
+![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2-struct.png)
+&nbsp;
 
 #### Footnotes
 
