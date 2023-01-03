@@ -212,9 +212,11 @@ Other possible usecases include
 
 Progress should come thick and fast in the coming weeks or months while contract undergoes stress tests and improvements. Primary near-term objectives include:
 
-- Helix2 Manager Client App
-- Helix2 Subgraph
-- Preset hooks for stealth payments, social graphs and DAOs.
+- Off-chain hooks to reduce gas costs for large molecules,
+- Helix2 Manager Client App,
+- Helix2 Subgraph,
+- Preset hooks for stealth payments, social graphs and DAOs,
+- and a lot of other ideas
 
 ---
 
