@@ -11,9 +11,9 @@ Double Helix or Helix2 is a next-generation link service on Ethereum, desgined a
 
 ## Introduction
 
-Most blockchains have developed their own versions of naming systems which allow representing addresses with human-readable names. On Ethereum, [Ethereum Name Service](https://app.ens.domains) (ENS) is the first and most notable example, while similar services later became available on Tezos and Solana in the form of [Tezos Domains](https://tezos.domains/en) and [Solana Name Service](https://naming.bonfida.org/) by Bonfida. By construction, a name service assigns names to nodes in a network. In a classic web2 world, Domain Name Service (DNS) fulfills this requirement. Crypto-native name services are similar to DNS in the sense that they enable assigning names to addresses similar to how DNS assigns human-readable names to Internet Protocols (IP). There are however clear added benefits to crypto-native naming architecture over DNS since crypto-native services often double as a decent identity framework in their respective blockchain ecosystems. It goes without saying that the immutability and decentralisation properties of typical crypto-native systems add to their desirability owing to their censor-resistant and unruggable nature.
+Most blockchains have developed their own versions of naming systems which allow representing addresses with human-readable names. On Ethereum, [Ethereum Name Service](https://app.ens.domains) (ENS) is the first and most notable example, while similar services later became available on Tezos and Solana in the form of [Tezos Domains](https://tezos.domains/en) and [Solana Name Service](https://naming.bonfida.org/) by Bonfida. By construction, a name service assigns names to nodes in a network. In a classic web2 world, Domain Name Service (DNS) fulfils this requirement. Crypto-native name services are similar to DNS in the sense that they enable assigning names to addresses similar to how DNS assigns human-readable names to Internet Protocols (IP). There are however clear added benefits to crypto-native naming architecture over DNS since crypto-native services often double as a decent identity framework in their respective blockchain ecosystems. It goes without saying that the immutability and decentralisation properties of typical crypto-native systems add to their desirability owing to their censor-resistant and unruggable nature.
 
-[Helix2](https://helix2.xyz) is designed as a possible next-generation successor of these name services. While the set of nodes form a canonical and natural choice for labeling in any distributed system (e.g. addresses on any blockchain), the observation nonetheless is that most nodes do not interact with each other. For instance, there are about 220 million Ethereum addresses whereas an average address will likely interact with no more than a few hundred other addresses its lifetime. This means that most wallets have a limited set of interactions with contracts and addresses in general and there interactions are classifiable to a very large degree. Keeping this in mind, Helix2 is an attempt to provide Ethereum with a next-generation link service, in addition to the name service already provided by ENS. The expected outcome of the Helix2 protocol is a link-native naming ecosystem, a 'linkspace', where an interaction between two names is representable on-chain similar, but not limited to, a human-readable name for an address. A shift in focus from nodes to links has a profound effect on the nature of structures that an ecosystem can support. Several features which are challenging to achieve with a name service alone become extremely convenient with Helix2. For instance, Helix2 comes with several fundamental and easily accessible structural features such as stealth payments, social graphs, DAOs etc.
+[Helix2](https://helix2.xyz) is designed as a possible next-generation successor of these name services. While the set of nodes form a canonical and natural choice for labeling in any distributed system (e.g. addresses on any blockchain), the observation nonetheless is that most nodes do not interact with each other. For instance, there are about 220 million Ethereum addresses whereas an average address will likely interact with no more than a few hundred other addresses its lifetime. This means that most wallets have a limited set of interactions with contracts and addresses in general and their interactions are classifiable to a very large degree. Keeping this in mind, Helix2 is an attempt to provide Ethereum with a next-generation link service, in addition to the name service already provided by ENS. The expected outcome of the Helix2 protocol is a link-native naming ecosystem, a 'linkspace', where an interaction between two names is representable on-chain similar, but not limited to, a human-readable name for an address. A shift in focus from nodes to links has a profound effect on the nature of structures that an ecosystem can support. Several features which are challenging to achieve with a name service alone become extremely convenient with Helix2. For instance, Helix2 comes with several fundamental and easily accessible structural features such as stealth payments, social graphs, DAOs etc.
 
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/gif/helix2-schema.gif)
 
@@ -39,7 +39,7 @@ Helix2 (Helix + 2) is roughly motivated by the double helix structure of DNA, wh
 
 - A **polycule** is a special type of molecule in which each individual bond between the cation and its several anions is unique. An example of a polycule is the set of private channels in a Discord server, where each channel may have its unique requirements as well as unique participating members.
 
-- A **hook** is a contractual (or non-contractual) relationship between two names and represented by the contract address that mediates the relationship between two names. For non-contractual relationships, `0x0` hook is used. Hooks must always accompany their set of rules which act as calldata for the hook.
+- A **hook** is a contractual (or non-contractual) relationship between two names and represented by the contract address that mediates the relationship between two names. For non-contractual relationships, `0x0` hook is used. Hooks must always accompany their set of rules which act as call data for the hook.
 
 - A **rule** is an identifier which encodes the relationship between two names and must accompany a hook as its calldata.
 
@@ -47,14 +47,14 @@ Helix2 (Helix + 2) is roughly motivated by the double helix structure of DNA, wh
 
 ### Ethereum Name Service (ENS)
 
-All name services so far have essentially been on-chain scalar databases (e.g. ENS, LENS, LNR, CB.ID), meaning that names are simply isolated nodes representable by one label (see figure below). ENS is a good example of such a scalar architecture. Typical name services like ENS are also heirarchical namespaces in the sense that the set of subnodes and nodes form a merkle-tree with labels as leaves of the tree. In such an architecture, names are self-contained and isolated by construction.
+All name services so far have essentially been on-chain scalar databases (e.g. ENS, LENS, LNR, CB.ID), meaning that names are simply isolated nodes representable by one label (see figure below). ENS is a good example of such a scalar architecture. Typical name services like ENS are also hierarchical namespaces in the sense that the set of subnodes and nodes form a merkle-tree with labels as leaves of the tree. In such an architecture, names are self-contained and isolated by construction.
 
 &nbsp;
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/ens.png)
 
 ### Helix2 Service
 
-Helix2 is essentially two services under one protocol: a native namespace providing a name service and a link service for that underlying namespace. Helix2 is an on-chain vector database. In Helix2, names can bond (or link) with one another; bonds are vectors between names, pointing from one name to another - this is the core premise of Helix2 protocol and essentially what separates it from other services. Helix2 names are not heirarchical, meaning that they cannot have subdomains, i.e. Helix2 is a flat namespace. Subdomains are not neccessary in Helix2 since linking provides the same features without constraining the relationships between nodes to within one parent node's heirarchy. This is the only significant divergence of Helix2 namespace from ENS. In addition to this flat namespace, Helix2 has an additional linkspace which is the core utility of the protocol.
+Helix2 is essentially two services under one protocol: a native namespace providing a name service and a link service for that underlying namespace. Helix2 is an on-chain vector database. In Helix2, names can bond (or link) with one another; bonds are vectors between names, pointing from one name to another - this is the core premise of Helix2 protocol and essentially what separates it from other services. Helix2 names are not hierarchical, meaning that they cannot have subdomains, i.e. Helix2 is a flat namespace. Subdomains are not necessary in Helix2 since linking provides the same features without constraining the relationships between nodes to within one parent node's hierarchy. This is the only significant divergence of Helix2 namespace from ENS. In addition to this flat namespace, Helix2 has an additional linkspace which is the core utility of the protocol.
 
 &nbsp;
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2.png)
@@ -76,7 +76,7 @@ struct NAME {
 }
 </pre>
 
-Helix2 names are similar to ENS names, except that the suffix for them is `.` instead of `.eth`. Helix2 names are not heirarchical, meaning that they cannot have subdomains.
+Helix2 names are similar to ENS names, except that the suffix for them is `.` instead of `.eth`. Helix2 names are not hierarchical, meaning that they cannot have subdomains.
 
 - All Helix2 names end with `.` and they have a Resolver and Controller. Note again that `.` is a reserved character and therefore forbidden. Additionally,`-` and `#` are also forbidden.
 
@@ -159,7 +159,7 @@ Other features of a molecule are similar to that of a molecule. To denote a bond
 
 ### Remarks
 
-The `molecule` structure is the topological superset of [`name`, `bond`, `polycule`], i.e. it is possible to derive polycules and bonds from molecules although that'll literally be a gas-guzzling mistake. The seemingly unecessary differentiation between the three is to optimise gas consumption.
+The `molecule` structure is the topological superset of [`name`, `bond`, `polycule`], i.e. it is possible to derive polycules and bonds from molecules although that'll literally be a gas-guzzling mistake. The seemingly unnecessary differentiation between the three is to optimise gas consumption.
 
 ## Contracts
 
@@ -182,7 +182,7 @@ Helix2 is a core infrastructure which can be leveraged for perhaps countless uti
 
 #### Multi-sig Safes
 
-By design, Helix2 molecules are a perfect fit for multi-sig vault management. Molecule struct is readily mapable to a multi-sig safe architecture and formalise vaults as nameable linkspaces.
+By design, Helix2 molecules are a perfect fit for multi-sig vault management. Molecule struct is readily mappable to a multi-sig safe architecture and formalise vaults as nameable linkspaces.
 
 #### Stealth payments
 
@@ -202,7 +202,7 @@ Helix2 molecules are a canonical fit for DAO governance and associated tooling w
 
 #### Other use-cases
 
-Other possible usecases include
+Other possible use-cases include
 
 - a unified web3 individual and group reputation system,
 - proof-of-humanness by defining human-specific hooks in molecules or polycules,
