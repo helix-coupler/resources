@@ -3,7 +3,7 @@
 #### Author: `sshmatrix`
 #### Links: [[GitHub](https://github.com/helix-coupler)]  [[.ETH](https://helix2.eth.limo)]  [[.XYZ](https://helix2.xyz)] [[Goerli](https://goerli.etherscan.io/address/0x608fbcbcf8e4d60830a97f116f7d004de48d7361)]
 ###### tags: `specification` `design` `architecture` `link` `bond`
-# Double Helix (Helix2)
+# Double Helix (Helix2) 🧬🧬🧬
 
 ## Abstract
 
@@ -163,7 +163,18 @@ The `molecule` structure is the topological superset of [`name`, `bond`, `polycu
 
 ## Contracts
 
-Helix2 `v0.0.1` contracts are now deployed for testing on Goerli at [`0x608fbcbcf8e4d60830a97f116f7d004de48d7361`](https://goerli.etherscan.io/address/0x608fbcbcf8e4d60830a97f116f7d004de48d7361). The testing stage is expected to last some weeks at least to allow for proper sampling of feedback from the wider community.
+Helix2 `v0.0.1` contracts are now deployed for testing on Goerli:
+
+Helix2 Core: [`0x608fbcbcf8e4d60830a97f116f7d004de48d7361`](https://goerli.etherscan.io/address/0x608fbcbcf8e4d60830a97f116f7d004de48d7361)
+
+| - | `Registrar` | `Registry` |
+| - | - | - |
+| Name | [`0xB9B...8f4`](https://goerli.etherscan.io/address/0xB9BB951aaA33cd723c536BDac80691f87b1778f4) | [`0x74E...A22`](https://goerli.etherscan.io/address/0x74E71F8d9015881a98065E10Dc1DefFA81E46A22) |
+| Bond | [`0x779...08E`](https://goerli.etherscan.io/address/0x77932429a41521BE353EA8E4076507AF3619A08E) | [`0xa87...41d`](https://goerli.etherscan.io/address/0xa87F2075EC87b50C30Cff3D23F42034D0188941d) |
+| Molecule | [`0xe5f...251`](https://goerli.etherscan.io/address/0xe5f2A931182fCbf9B31A6C7f5d525d9259CF4251) | [`0xD61...94e`](https://goerli.etherscan.io/address/0xD61C1CCf935AeF5D9B9449bBDf811d63592FE94e) |  set IPFS hash of JSON | ❌ |
+| Polycule | [`0xBDe...1F8`](https://goerli.etherscan.io/address/0xBDeE64035fA5B85e91c6A178572A159149D521F8) | [`0xE17...d9D`](https://goerli.etherscan.io/address/0xE1752F3A3579064284DB9d1C21DEDF95C1414d9D) |
+
+The testing stage is expected to last some weeks at least to allow for proper sampling of feedback from the wider community.
 
 ## Utility
 
