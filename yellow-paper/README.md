@@ -41,7 +41,7 @@ Helix2 (Helix + 2) is roughly motivated by the double helix structure of DNA, wh
 
 - A **hook** is a contractual (or non-contractual) relationship between two names and represented by the contract address that mediates the relationship between two names. For non-contractual relationships, `0x0` hook is used. Hooks must always accompany their set of rules which act as call data for the hook.
 
-- A **rule** is an identifier which encodes the relationship between two names and must accompany a hook as its calldata.
+- A **rule** is an identifier which encodes the relationship between two names and must accompany a hook as its call data.
 
 ## Helix2 Design
 
@@ -63,7 +63,7 @@ While the theoretical premise of a linkspace appears easy, in practise, this pre
 
 ## Helix2 Protocol
 
-All native objects (names, links, bonds etc) end with `.`, e.g. `alice.`, whereas `.` acts as a trailing marker. Consequently, `.` is one of the two reserved characters in Helix2 and cannot be used in any of the object labels (other than as a suffix)
+All native objects (names, links, bonds etc) end with `.`, e.g. `alice.`, whereas `.` acts as a trailing marker. Consequently, `.` is one of the three reserved characters in Helix2 and cannot be used in any of the object labels (other than as a suffix)
 
 ### Names
 
@@ -99,7 +99,7 @@ struct BOND {
 }
 </pre>
 
-A directional bond between two names `alice.` → `bob.` is labeled by its alias `alias`. Bonds start with `-`, end with`.` and can be queried by their alias prefixed with `-`, e.g. `-alias.`
+A directional bond between two names `alice.` → `bob.` is labeled by its alias `alias`. Bonds start with `-`, end with `.` and can be queried by their alias prefixed with `-`, e.g. `-alias.`
 
 The source of the bond is called a cation (`alice.`) and the target is called an anion (`bob.`)
 
@@ -113,7 +113,7 @@ Further, `covalence` flag determines whether the bond is 'secure' or 'unsecure' 
 The most important feature of bonds are `hooks` and `rules`, which quantify the link between two names and give meaning to the `-` representation. Hooks are contractual definitions between two names: `mapping(uint8 => address)`, mediated by ordered one-to-one mapping inside rules: `uint8[] rules`
 
 - To query a hook inside `hooks` for a bond, one needs its associated `rule`, which is a `uint8` identifier mapping to the contractual address `hook`. Hooks are thus queryable as `-alias#rule.`, e.g. `-alias#404.`
-- A trivial application of a hook is a payment router, i.e. payment sent to `0` hook `alias-#0.` is routed to the address of `bob.`; more on hooks in upcoming sections.
+- A trivial application of a hook is a payment router, i.e. payment sent to `0` hook `-alias#0.` is routed to the address of `bob.`; more on hooks in upcoming sections.
 
 ### Molecules
 
