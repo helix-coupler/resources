@@ -1,7 +1,7 @@
 # Helix2 Technical Design
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/logo/helix2-inverse-small.png)
 #### Author: `sshmatrix`
-#### Links: [[GitHub](https://github.com/helix-coupler)]  [[.ETH](https://helix2.eth.limo)]  [[.XYZ](https://helix2.xyz)]
+#### Links: [[GitHub](https://github.com/helix-coupler)]  [[.ETH](https://helix2.eth.limo)]  [[.XYZ](https://helix2.xyz)] [[Goerli](https://goerli.etherscan.io/address/0x608fbcbcf8e4d60830a97f116f7d004de48d7361)]
 ###### tags: `specification` `design` `architecture` `link` `bond`
 # Double Helix (Helix2)
 
@@ -14,6 +14,8 @@ Double Helix or Helix2 is a next-generation link service on Ethereum, desgined a
 Most blockchains have developed their own versions of naming systems which allow representing addresses with human-readable names. On Ethereum, [Ethereum Name Service](https://app.ens.domains) (ENS) is the first and most notable example, while similar services later became available on Tezos and Solana in the form of [Tezos Domains](https://tezos.domains/en) and [Solana Name Service](https://naming.bonfida.org/) by Bonfida. By construction, a name service assigns names to nodes in a network. In a classic web2 world, Domain Name Service (DNS) fulfills this requirement. Crypto-native name services are similar to DNS in the sense that they enable assigning names to addresses similar to how DNS assigns human-readable names to Internet Protocols (IP). There are however clear added benefits to crypto-native naming architecture over DNS since crypto-native services often double as a decent identity framework in their respective blockchain ecosystems. It goes without saying that the immutability and decentralisation properties of typical crypto-native systems add to their desirability owing to their censor-resistant and unruggable nature.
 
 [Helix2](https://helix2.xyz) is designed as a possible next-generation successor of these name services. While the set of nodes form a canonical and natural choice for labeling in any distributed system (e.g. addresses on any blockchain), the observation nonetheless is that most nodes do not interact with each other. For instance, there are about 220 million Ethereum addresses whereas an average address will likely interact with no more than a few hundred other addresses its lifetime. This means that most wallets have a limited set of interactions with contracts and addresses in general and there interactions are classifiable to a very large degree. Keeping this in mind, Helix2 is an attempt to provide Ethereum with a next-generation link service, in addition to the name service already provided by ENS. The expected outcome of the Helix2 protocol is a link-native naming ecosystem where an interaction between two names is representable on-chain similar, but not limited to, a human-readable name for an address. A shift in focus from nodes to links has a profound effect on the nature of structures that an ecosystem can support. Several features which are challenging to achieve with a name service alone become extremely convenient with Helix2. For instance, Helix2 comes with several fundamental and easily accessible structural features such as private payments, social graphs, DAOs etc.
+
+![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/gif/helix2-schema.gif)
 
 While Helix2 has its own namespace, it does not replace ENS and is in fact intended to work alongside ENS as an extension. Helix2 is able to import all `.` namespaces by design without any bridging or wrapping. Lastly, Helix2 is not the only link service in the works; [Woolball](https://woolball.xyz) is another link service currently under development although the two implementations arguably have more differences than similarities.
 
@@ -161,11 +163,11 @@ The `molecule` structure is the topological superset of [`name`, `bond`, `polycu
 
 ## Contracts
 
-Helix2 protocol is schematically presented below for ease of understanding.
+Helix2 `v0.0.1` contracts are now deployed for testing on Goerli at [`0x608fbcbcf8e4d60830a97f116f7d004de48d7361`](https://goerli.etherscan.io/address/0x608fbcbcf8e4d60830a97f116f7d004de48d7361). The testing stage is expected to last some weeks at least to allow for proper sampling of feedback from the wider community.
 
-&nbsp;
-![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2-struct.png)
-&nbsp;
+## Utility
+
+
 
 #### Footnotes
 
