@@ -13,7 +13,7 @@ Double Helix or Helix2 is a next-generation link service on Ethereum, desgined a
 
 Most blockchains have developed their own versions of naming systems which allow representing addresses with human-readable names. On Ethereum, [Ethereum Name Service](https://app.ens.domains) (ENS) is the first and most notable example, while similar services later became available on Tezos and Solana in the form of [Tezos Domains](https://tezos.domains/en) and [Solana Name Service](https://naming.bonfida.org/) by Bonfida. By construction, a name service assigns names to nodes in a network. In a classic web2 world, Domain Name Service (DNS) fulfills this requirement. Crypto-native name services are similar to DNS in the sense that they enable assigning names to addresses similar to how DNS assigns human-readable names to Internet Protocols (IP). There are however clear added benefits to crypto-native naming architecture over DNS since crypto-native services often double as a decent identity framework in their respective blockchain ecosystems. It goes without saying that the immutability and decentralisation properties of typical crypto-native systems add to their desirability owing to their censor-resistant and unruggable nature.
 
-[Helix2](https://helix2.xyz) is designed as a possible next-generation successor of these name services. While the set of nodes form a canonical and natural choice for labeling in any distributed system (e.g. addresses on any blockchain), the observation nonetheless is that most nodes do not interact with each other. For instance, there are about 220 million Ethereum addresses whereas an average address will likely interact with no more than a few hundred other addresses its lifetime. This means that most wallets have a limited set of interactions with contracts and addresses in general and there interactions are classifiable to a very large degree. Keeping this in mind, Helix2 is an attempt to provide Ethereum with a next-generation link service, in addition to the name service already provided by ENS. The expected outcome of the Helix2 protocol is a link-native naming ecosystem where an interaction between two names is representable on-chain similar, but not limited to, a human-readable name for an address. A shift in focus from nodes to links has a profound effect on the nature of structures that an ecosystem can support. Several features which are challenging to achieve with a name service alone become extremely convenient with Helix2. For instance, Helix2 comes with several fundamental and easily accessible structural features such as private payments, social graphs, DAOs etc.
+[Helix2](https://helix2.xyz) is designed as a possible next-generation successor of these name services. While the set of nodes form a canonical and natural choice for labeling in any distributed system (e.g. addresses on any blockchain), the observation nonetheless is that most nodes do not interact with each other. For instance, there are about 220 million Ethereum addresses whereas an average address will likely interact with no more than a few hundred other addresses its lifetime. This means that most wallets have a limited set of interactions with contracts and addresses in general and there interactions are classifiable to a very large degree. Keeping this in mind, Helix2 is an attempt to provide Ethereum with a next-generation link service, in addition to the name service already provided by ENS. The expected outcome of the Helix2 protocol is a link-native naming ecosystem, a 'linkspace', where an interaction between two names is representable on-chain similar, but not limited to, a human-readable name for an address. A shift in focus from nodes to links has a profound effect on the nature of structures that an ecosystem can support. Several features which are challenging to achieve with a name service alone become extremely convenient with Helix2. For instance, Helix2 comes with several fundamental and easily accessible structural features such as stealth payments, social graphs, DAOs etc.
 
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/gif/helix2-schema.gif)
 
@@ -54,7 +54,7 @@ All name services so far have essentially been on-chain scalar databases (e.g. E
 
 ### Helix2 Service
 
-Helix2 is essentially two services under one protocol: a native namespace providing a name service and a link service for that underlying namespace. Helix2 is an on-chain vector database. In Helix2, names can bond (or link) with one another; bonds are vectors between names, pointing from one name to another - this is the core premise of Helix2 protocol and essentially what separates it from other services. Helix2 names are not heirarchical, meaning that they cannot have subdomains, i.e. Helix2 is a flat namespace. Subdomains are not neccessary in Helix2 since linking provides the same features without constraining the relationships between nodes to within one parent node's heirarchy. This is the only significant divergence of Helix2 namespace from ENS. In addition to this flat namespace, Helix2 has an additional 'linkspace' which is the core utility of the protocol.
+Helix2 is essentially two services under one protocol: a native namespace providing a name service and a link service for that underlying namespace. Helix2 is an on-chain vector database. In Helix2, names can bond (or link) with one another; bonds are vectors between names, pointing from one name to another - this is the core premise of Helix2 protocol and essentially what separates it from other services. Helix2 names are not heirarchical, meaning that they cannot have subdomains, i.e. Helix2 is a flat namespace. Subdomains are not neccessary in Helix2 since linking provides the same features without constraining the relationships between nodes to within one parent node's heirarchy. This is the only significant divergence of Helix2 namespace from ENS. In addition to this flat namespace, Helix2 has an additional linkspace which is the core utility of the protocol.
 
 &nbsp;
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2.png)
@@ -167,7 +167,45 @@ Helix2 `v0.0.1` contracts are now deployed for testing on Goerli at [`0x608fbcbc
 
 ## Utility
 
+Helix2 is a core infrastructure which can be leveraged for perhaps countless utilities. Some of the notable few that come to mind are the following.
 
+#### Multi-sig Safes
+
+By design, Helix2 molecules are a perfect fit for multi-sig vault management. Molecule struct is readily mapable to a multi-sig safe architecture and formalise vaults as nameable linkspaces.
+
+#### Stealth payments
+
+Helix2 hooks can be configured for bonds to receive stealth payments to a name via a stealth protocol such as [Umbra Protocol](https://github.com/ScopeLift/umbra-protocol).
+
+#### Web3 social graphs
+
+Helix2 molecules are a natural fit for open social graphs and could aid in better decentralised social media protocols.
+
+#### Messaging and chat apps
+
+Helix2 molecules are a natural fit for web3 messaging apps and chat services. In particular, molecules are a canonical choice for organising group chat participants and their permissions whereas polycules could be utilised to manage private channels. Both in combination could help build the elusive web3 version of Discord.
+
+#### DAOs
+
+Helix2 molecules are a canonical fit for DAO governance and associated tooling where delegates can be viewed as members of the same molecule with common relationship among all members of the DAO. [Orca Protocol](https://orca.mirror.xyz/Y2xvPmB4cJH51srGqY6Mm_g38lV-7cwvtyDePnyzfAE) is a similar idea which has been implemented already albeit with limited focus on on-chain coordination.
+
+#### Other use-cases
+
+Other possible usecases include
+
+- a unified web3 individual and group identity system,
+- proof-of-humanness by defining human-specific hooks in molecules or polycules,
+- and perhaps anything and everything that requires coordination in groups.
+
+## Future progress
+
+Progress should come thick and fast in the coming weeks or months while contract undergoes stress tests and improvements. Primary near-term objectives include:
+
+- Helix2 Manager Client App
+- Helix2 Subgraph
+- Preset hooks for stealth payments, social graphs and DAOs.
+
+---
 
 #### Footnotes
 
