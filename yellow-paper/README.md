@@ -63,7 +63,7 @@ While the theoretical premise of a linkspace appears easy, in practise, this pre
 
 ## Helix2 Protocol
 
-All native objects (names, links, bonds etc) end with `.`, e.g. `alice.`, whereas `.` acts as a trailing marker. Consequently, `.` is one of the three reserved characters in Helix2 and cannot be used in any of the object labels (other than as a suffix)
+All native objects (names, links, bonds etc) end with `.`, e.g. `alice.`, where `.` acts as a trailing marker. Consequently, `.` is one of the three reserved characters in Helix2 and cannot be used in any of the object labels (other than as a suffix)
 
 ### Names
 
@@ -78,7 +78,7 @@ struct NAME {
 
 Helix2 names are similar to ENS names, except that the suffix for them is `.` instead of `.eth`. Helix2 names are not hierarchical, meaning that they cannot have subdomains.
 
-- All Helix2 names end with `.` and they have a Resolver and Controller. Note again that `.` is a reserved character and therefore forbidden. Additionally,`-` and `#` are also forbidden.
+- All Helix2 names end with `.` and they have a Resolver and Controller. Note again that `.` is a reserved character and therefore forbidden. Additionally, `-` and `#` are also forbidden.
 
 #### Importing ENS names
 
