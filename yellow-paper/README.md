@@ -161,6 +161,8 @@ Other features of a molecule are similar to that of a molecule. To denote a bond
 
 The `molecule` structure is the topological superset of [`name`, `bond`, `polycule`], i.e. it is possible to derive polycules and bonds from molecules although that'll literally be a gas-guzzling mistake. The seemingly unnecessary differentiation between the three is to optimise gas consumption.
 
+![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2-contracts.png)
+
 ## Contracts
 
 Helix2 `v0.0.1` contracts are now deployed for testing on Goerli:
