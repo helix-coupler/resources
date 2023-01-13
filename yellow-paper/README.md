@@ -161,20 +161,27 @@ Other features of a molecule are similar to that of a molecule. To denote a bond
 
 The `molecule` structure is the topological superset of [`name`, `bond`, `polycule`], i.e. it is possible to derive polycules and bonds from molecules although that'll literally be a gas-guzzling mistake. The seemingly unnecessary differentiation between the three is to optimise gas consumption.
 
-![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2-contracts.png)
-
 ## Contracts
 
-Helix2 `v0.0.1` contracts are now deployed for testing on Goerli:
+Helix2 Protocol is a fairly large set of code divided into clean modules in a way that all submodules are replaceable and upgradeable without breaking any existing architecture or interfaces. This is achieved through a combination of basic logic & storage separation via proxies and [EIP-2535 Diamond Standard](https://eips.ethereum.org/EIPS/eip-2535). 
 
-Helix2 Core: [`0x608fbcbcf8e4d60830a97f116f7d004de48d7361`](https://goerli.etherscan.io/address/0x608fbcbcf8e4d60830a97f116f7d004de48d7361)
+There are four submodules in the genesis version of protocol - Name, Bond, Molecule and Polycule. Each submodule is composed of three contracts - Registrar, Registry & Storage. In each submodule, the storage contracts are proxied by registry contracts such that the logic and storage is seperated. This enables the protocol to replace the storage and logic in each submodule seemlessly through future protocol upgrades without compromising on-top services. Name submodule is somewhat more central to the architecture than the remaining three link modules since links depend on and derive from names. 
+
+The four submodules are connected at the core by the Helix2 Core manager which is a state-of-the-art [Multi-facet Proxy (EIP-2535)](https://eips.ethereum.org/EIPS/eip-2535). EIP-2535 compliant contracts are fully upgradeable and it allows Helix2 protocol to use one single address forever without compromising on future functionalities or breaking existing on-chain or off-chain functionalities. Helix2 manager is capable of excepting new submodules, replace existing submodules or update core configuration. 
+
+
+![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2-contracts.png)
+
+Helix2 `v0.0.2` contracts are now deployed for testing on Goerli:
+
+Helix2 Core: [`0x0`]()
 
 | - | `Registrar` | `Registry` |
 | - | - | - |
-| Name | [`0xB9B...8f4`](https://goerli.etherscan.io/address/0xB9BB951aaA33cd723c536BDac80691f87b1778f4) | [`0x74E...A22`](https://goerli.etherscan.io/address/0x74E71F8d9015881a98065E10Dc1DefFA81E46A22) |
-| Bond | [`0x779...08E`](https://goerli.etherscan.io/address/0x77932429a41521BE353EA8E4076507AF3619A08E) | [`0xa87...41d`](https://goerli.etherscan.io/address/0xa87F2075EC87b50C30Cff3D23F42034D0188941d) |
-| Molecule | [`0xe5f...251`](https://goerli.etherscan.io/address/0xe5f2A931182fCbf9B31A6C7f5d525d9259CF4251) | [`0xD61...94e`](https://goerli.etherscan.io/address/0xD61C1CCf935AeF5D9B9449bBDf811d63592FE94e) |  set IPFS hash of JSON | ❌ |
-| Polycule | [`0xBDe...1F8`](https://goerli.etherscan.io/address/0xBDeE64035fA5B85e91c6A178572A159149D521F8) | [`0xE17...d9D`](https://goerli.etherscan.io/address/0xE1752F3A3579064284DB9d1C21DEDF95C1414d9D) |
+| Name | [`0x0`](https://goerli.etherscan.io/address/0xB9BB951aaA33cd723c536BDac80691f87b1778f4) | [`0x0`](https://goerli.etherscan.io/address/0x74E71F8d9015881a98065E10Dc1DefFA81E46A22) |
+| Bond | [`0x0`](https://goerli.etherscan.io/address/0x77932429a41521BE353EA8E4076507AF3619A08E) | [`0x0`](https://goerli.etherscan.io/address/0xa87F2075EC87b50C30Cff3D23F42034D0188941d) |
+| Molecule | [`0x0`](https://goerli.etherscan.io/address/0xe5f2A931182fCbf9B31A6C7f5d525d9259CF4251) | [`0x0`](https://goerli.etherscan.io/address/0xD61C1CCf935AeF5D9B9449bBDf811d63592FE94e) |
+| Polycule | [`0x0`](https://goerli.etherscan.io/address/0xBDeE64035fA5B85e91c6A178572A159149D521F8) | [`0x0`](https://goerli.etherscan.io/address/0xE1752F3A3579064284DB9d1C21DEDF95C1414d9D) |
 
 The testing stage is expected to last some weeks at least to allow for proper sampling of feedback from the wider community.
 
@@ -188,7 +195,7 @@ By design, Helix2 molecules are a perfect fit for multi-sig vault management. Mo
 
 #### Stealth payments
 
-Helix2 hooks can be configured for bonds to receive stealth payments to a name via a stealth protocol such as [Umbra Protocol](https://github.com/ScopeLift/umbra-protocol) or [zkAztec](https://zk.money/). Note that this feature is also possible with ENS Resolver.
+Helix2 hooks can be configured for bonds to receive stealth payments to a name via a stealth protocol such as [Umbra Protocol](https://github.com/ScopeLift/umbra-protocol) or [Aztec](https://zk.money/). Note that this feature is also possible with ENS Resolver.
 
 #### Web3 social graphs
 
@@ -225,3 +232,19 @@ Progress should come thick and fast in the coming weeks or months while contract
 #### Footnotes
 
 <a name="1">[1]</a> Although this example uses addresses as nodes, a similar implementation is nonetheless possible with names.
+
+
+### Previous deployments
+
+#### v0.0.1
+
+Helix2 `v0.0.1` contracts are now deployed for testing on Goerli:
+
+Helix2 Core: [`0x608fbcbcf8e4d60830a97f116f7d004de48d7361`](https://goerli.etherscan.io/address/0x608fbcbcf8e4d60830a97f116f7d004de48d7361)
+
+| - | `Registrar` | `Registry` |
+| - | - | - |
+| Name | [`0xB9B...8f4`](https://goerli.etherscan.io/address/0xB9BB951aaA33cd723c536BDac80691f87b1778f4) | [`0x74E...A22`](https://goerli.etherscan.io/address/0x74E71F8d9015881a98065E10Dc1DefFA81E46A22) |
+| Bond | [`0x779...08E`](https://goerli.etherscan.io/address/0x77932429a41521BE353EA8E4076507AF3619A08E) | [`0xa87...41d`](https://goerli.etherscan.io/address/0xa87F2075EC87b50C30Cff3D23F42034D0188941d) |
+| Molecule | [`0xe5f...251`](https://goerli.etherscan.io/address/0xe5f2A931182fCbf9B31A6C7f5d525d9259CF4251) | [`0xD61...94e`](https://goerli.etherscan.io/address/0xD61C1CCf935AeF5D9B9449bBDf811d63592FE94e) |
+| Polycule | [`0xBDe...1F8`](https://goerli.etherscan.io/address/0xBDeE64035fA5B85e91c6A178572A159149D521F8) | [`0xE17...d9D`](https://goerli.etherscan.io/address/0xE1752F3A3579064284DB9d1C21DEDF95C1414d9D) |

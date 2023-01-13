@@ -1,0 +1,61 @@
+\documentclass[a4paper,10pt]{article}
+
+%-------------------------------------
+% heading font-size
+\usepackage{sectsty}
+\usepackage{fontspec}
+\sectionfont{\fontsize{12}{15}\selectfont}
+
+%-------------------------------------
+% packages
+\usepackage[a4paper,margin=1in,footnotesep=2.2\baselineskip]{geometry}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{framed}
+\usepackage{emoji}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+
+%-------------------------------------
+% footnote positioning
+\usepackage[hang,flushmargin,bottom]{footmisc} 
+
+%-------------------------------
+% bibliography
+\usepackage[numbers,sort]{natbib}
+%\usepackage{navigator}
+\usepackage[colorlinks=true,
+            linkcolor=blue,
+            urlcolor=blue,
+            citecolor=blue]{hyperref}
+
+%------------------------------- 
+% header
+\pagestyle{fancy}
+\fancyhf{}
+
+%------------------------------- 
+% macros
+\input{Macros.tex}
+
+\begin{document}
+\setcounter{footnote}{0}
+\newpage
+\topskip15pt
+
+\fancyhead[L]{\footnotesize \tcbox{\mono{sshmatrix}}}
+\fancyhead[R]{{\footnotesize \pro{Helix2 Protocol} \emoji{dna}}}
+
+
+\begin{center}
+\textbf{\huge\pro{Helix2 Protocol}}\linebreak\linebreak
+\tcbox{\mono{sshmatrix}}\linebreak\linebreak
+
+\end{center}
+
+\begin{multicols}{2}
+
+\bibliographystyle{plainnat}
+\bibliography{}
+\end{multicols}
+\end{document}
