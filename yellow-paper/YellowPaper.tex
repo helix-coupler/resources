@@ -15,6 +15,8 @@
 \usepackage{emoji}
 \usepackage[most]{tcolorbox}
 \usepackage{fancyhdr}
+\usepackage[tracking=true]{microtype}
+\usepackage{ragged2e}
 
 %-------------------------------------
 % footnote positioning
@@ -43,18 +45,38 @@
 \newpage
 \topskip15pt
 
-\fancyhead[L]{\footnotesize \tcbox{\mono{sshmatrix}}}
-\fancyhead[R]{{\footnotesize \pro{Helix2 Protocol} \emoji{dna}}}
+\fancyhead[L]{\footnotesize \mono{author}:\tcbox{\mono{sshmatrix}}}
+\fancyhead[R]{{\footnotesize \mono{Helix2 Protocol} \emoji{dna}}}
 
 
 \begin{center}
-\textbf{\huge\pro{Helix2 Protocol}}\linebreak\linebreak
-\tcbox{\mono{sshmatrix}}\linebreak\linebreak
-
+\textbf{\huge\pro{HELIX2}}\\
+\vspace{0.075in}
+\textls[-50]{\mono{Protocol and Link Service}}\linebreak\linebreak
 \end{center}
+\begin{center}
+\textbf{\large\pro{ABSTRACT}}\linebreak\linebreak
+\textls[-50]{\mono{Double Helix or Helix2 is a next-generation link service on Ethereum, designed as a natural successor to generic name services. With Helix2 protocol, it is now possible to link names in several useful configurations on Ethereum blockchain. Helix2 infrastructure makes it possible to define interactions between names, categorise those interactions, assign them rules and labels, and most importantly authorise those interactions with on-chain records. Due to its unique design crafted to leverage interactions among names, Helix2 allows names to form organised on-chain structures and graphs.}}
+\end{center}
+\vspace{0.2in}
+\begin{flushleft}
+\textbf{\large\pro{INTRODUCTION}}\linebreak\linebreak
+\textls[-50]{\mono{Most blockchains have developed their own versions of naming systems which allow representing addresses with human-readable names. On Ethereum, \href{https://app.ens.domains}{Ethereum Name Service} (ENS) is the first and most notable example, while similar services later became available on Tezos and Solana in the form of \href{https://tezos.domains/en}{Tezos Domains} and \href{https://naming.bonfida.org/}{Solana Name Service} by Bonfida. By construction, a name service assigns names to nodes in a network. In a classic web2 world, Domain Name Service (DNS) fulfils this requirement. Crypto-native name services are similar to DNS in the sense that they enable assigning names to addresses similar to how DNS assigns human-readable names to Internet Protocols (IP). There are however clear added benefits to crypto-native naming architecture over DNS since crypto-native services often double as a decent identity framework in their respective blockchain ecosystems. It goes without saying that the immutability and decentralisation properties of typical crypto-native systems add to their desirability owing to their censor-resistant and unruggable nature.}}
+\end{flushleft}
+\begin{figure}[ht!]
+\centering\includegraphics[width=160mm]{../schema/gif/helix2-schema_2.png}
+\end{figure}
+\begin{flushleft}
+\textls[-50]{\mono{\href{https://helix2.xyz}{Helix2} is designed as a next-generation successor of these name services. While the set of nodes form a canonical and natural choice for labeling in any distributed system (e.g. addresses on any blockchain), the observation nonetheless is that most nodes do not interact with each other. For instance, there are about 220 million Ethereum addresses whereas an average address will likely interact with no more than a few hundred other addresses its lifetime. This means that most wallets have a limited set of interactions with contracts and addresses in general and their interactions are classifiable to a very large degree. Keeping this in mind, Helix2 is an attempt to provide Ethereum with a next-generation link service, in addition to the name service already provided by ENS. The expected outcome of the Helix2 protocol is a link-native naming ecosystem, a 'linkspace', where an interaction between two names is representable on-chain similar, but not limited to, a human-readable name for an address. A shift in focus from nodes to links has a profound effect on the nature of structures that an ecosystem can support. Several features which are challenging to achieve with a name service alone become extremely convenient with Helix2. For instance, Helix2 comes with several fundamental and easily accessible structural features such as stealth payments, social graphs, DAOs etc.\\
+\vspace{0.2in}
+While Helix2 has its own namespace, it does not replace ENS and is in fact intended to work alongside ENS as an extension. Helix2 is able to import all \tcbox{\mono{.}} namespaces by design without any bridging or wrapping. Lastly, Helix2 is not the only link service in the works; \href{https://woolball.xyz}{Woolball} is another link service currently under development although the two implementations arguably have more differences than similarities.}}
+\end{flushleft}
+\begin{flushleft}
+\textls[-50]{\mono{
 
+}}
+\end{flushleft}
 \begin{multicols}{2}
-
 \bibliographystyle{plainnat}
 \bibliography{}
 \end{multicols}
