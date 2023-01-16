@@ -39,7 +39,7 @@ Helix2 (Helix + 2) is roughly motivated by the double helix structure of DNA, wh
 
 - A **polycule** is a special type of molecule in which each individual bond between the cation and its several anions is unique. An example of a polycule is the set of private channels in a Discord server, where each channel may have its unique requirements as well as unique participating members.
 
-- A **hook** is a contractual (or non-contractual) relationship (a contract) between two names. Technically, a hook is a map consisting of two elements `rule → config`. 
+- A **hook** is a contractual (or non-contractual) relationship (a contract) between two names. Technically, a hook is a map consisting of two elements `rule → config`.
 
 - A **config** is the address of the contract defining a hook between two names. For non-contractual relationships, `0x0` config is used.
 
@@ -112,7 +112,7 @@ Further, `covalence` flag determines whether the bond is 'secure' or 'unsecure' 
 
 ### Hooks, Rules & Config
 
-The most important feature of bonds are `config` and `rule`,  combining to form a `hook`, which quantify the link between two names and gives meaning to the `-` representation. Hooks are contractual mappings` rule → config` between two names: `mapping(uint8 => address)`, mediated by ordered one-to-one mapping inside rules: `uint8[] rules`
+The most important feature of bonds are `config` and `rule`,  combining to form a `hook`, which quantify the link between two names and gives meaning to the `-` representation. Hooks are contractual mappings` rule → config` between two names, mediated by ordered one-to-one mapping inside rules: `uint8[] rules`
 
 - To query a hook's config inside `hooks` for a bond, one needs its associated `rule`, which is a `uint8` identifier mapping to the contractual address `config`. Hooks are thus queryable as `-label#rule.`, e.g. `-label#404.`
 - A trivial application of a hook is a payment router, i.e. payment sent to `0` hook `-label#0.` is routed to the address of `bob.`; more on hooks in upcoming sections.
@@ -165,11 +165,11 @@ The `molecule` structure is the topological superset of [`name`, `bond`, `polycu
 
 ## Contracts
 
-Helix2 Protocol is a fairly large set of code divided into clean modules in a way that all submodules are replaceable and upgradeable without breaking any existing architecture or interfaces. This is achieved through a combination of basic logic & storage separation via proxies and [EIP-2535 Diamond Standard](https://eips.ethereum.org/EIPS/eip-2535). 
+Helix2 Protocol is a fairly large set of code divided into clean modules in a way that all submodules are replaceable and upgradeable without breaking any existing architecture or interfaces. This is achieved through a combination of basic logic & storage separation via proxies and [EIP-2535 Diamond Standard](https://eips.ethereum.org/EIPS/eip-2535).
 
-There are four submodules in the genesis version of protocol - Name, Bond, Molecule and Polycule. Each submodule is composed of three contracts - Registrar, Registry & Storage. In each submodule, the storage contracts are proxied by registry contracts such that the logic and storage is seperated. This enables the protocol to replace the storage and logic in each submodule seemlessly through future protocol upgrades without compromising on-top services. Name submodule is somewhat more central to the architecture than the remaining three link modules since links depend on and derive from names. 
+There are four submodules in the genesis version of protocol - Name, Bond, Molecule and Polycule. Each submodule is composed of three contracts - Registrar, Registry & Storage. In each submodule, the storage contracts are proxied by registry contracts such that the logic and storage is seperated. This enables the protocol to replace the storage and logic in each submodule seemlessly through future protocol upgrades without compromising on-top services. Name submodule is somewhat more central to the architecture than the remaining three link modules since links depend on and derive from names.
 
-The four submodules are connected at the core by the Helix2 Core manager which is a state-of-the-art [Multi-facet Proxy (EIP-2535)](https://eips.ethereum.org/EIPS/eip-2535). EIP-2535 compliant contracts are fully upgradeable and it allows Helix2 protocol to use one single address forever without compromising on future functionalities or breaking existing on-chain or off-chain functionalities. Helix2 manager is capable of excepting new submodules, replace existing submodules or update core configuration. 
+The four submodules are connected at the core by the Helix2 Core manager which is a state-of-the-art [Multi-facet Proxy (EIP-2535)](https://eips.ethereum.org/EIPS/eip-2535). EIP-2535 compliant contracts are fully upgradeable and it allows Helix2 protocol to use one single address forever without compromising on future functionalities or breaking existing on-chain or off-chain functionalities. Helix2 manager is capable of excepting new submodules, replace existing submodules or update core configuration.
 
 
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2-contracts.png)
