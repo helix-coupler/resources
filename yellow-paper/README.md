@@ -90,8 +90,8 @@ Helix2 is capable of importing all `.` namespaces by forbidding `.` in its nativ
 
 ```
 struct BOND {
-    uint8[] rules;
-    mapping(uint8 => address) hooks;
+    uint256[] rules;
+    mapping(uint256 => address) hooks;
     bytes32 anion;
     bytes32 label;
     address resolver;
@@ -112,17 +112,17 @@ Further, `covalence` flag determines whether the bond is 'secure' or 'unsecure' 
 
 ### Hooks, Rules & Config
 
-The most important feature of bonds are `config` and `rule`,  combining to form a `hook`, which quantify the link between two names and gives meaning to the `-` representation. Hooks are contractual mappings` rule → config` between two names, mediated by ordered one-to-one mapping inside rules: `uint8[] rules`
+The most important feature of bonds are `config` and `rule`,  combining to form a `hook`, which quantify the link between two names and gives meaning to the `-` representation. Hooks are contractual mappings` rule → config` between two names, mediated by ordered one-to-one mapping inside rules: `uint256[] rules`
 
-- To query a hook's config inside `hooks` for a bond, one needs its associated `rule`, which is a `uint8` identifier mapping to the contractual address `config`. Hooks are thus queryable as `-label#rule.`, e.g. `-label#404.`
+- To query a hook's config inside `hooks` for a bond, one needs its associated `rule`, which is a `uint256` identifier mapping to the contractual address `config`. Hooks are thus queryable as `-label#rule.`, e.g. `-label#404.`
 - A trivial application of a hook is a payment router, i.e. payment sent to `0` hook `-label#0.` is routed to the address of `bob.`; more on hooks in upcoming sections.
 
 ### Molecules
 
 ```
 struct MOLECULE {
-    uint8[] rules;
-    mapping(uint8 => address) hooks;
+    uint256[] rules;
+    mapping(uint256 => address) hooks;
     bytes32[] anions;
     bytes32 label;
     address resolver;
@@ -140,8 +140,8 @@ Other features of a molecule are similar to that of a bond, e.g. a molecule can 
 
 ```
 struct POLYCULE {
-    uint8[] rules;
-    mapping(uint8 => address) hooks;
+    uint256[] rules;
+    mapping(uint256 => address) hooks;
     bytes32[] anions;
     bytes32 label;
     address resolver;
