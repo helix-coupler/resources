@@ -223,7 +223,7 @@ Other possible use-cases include
 
 The architecture of a link service, Helix2, described in this paper shows several advances and features with clear utility across the Ethereum ecosystem. The architecture of Helix2 service described in this paper promises several advances and features with clear utility across the Ethereum ecosystem ranging from identity to stealth payments. Nonetheless, it will be naive to think that its usecases will be limited to what is discussed in this paper. The architecture of Helix2 protocol is fairly low level and it has been designed for maximum upgradeability and dynamism with as little friction as possible. The four submodules introduced in this paper are only the most basic structures and the Helix2 core expects several new submodules in the future under its repertoire.
 
-![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/png/network.png)
+![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/png/roadmap.png)
 
 The codebase of Helix2 at the time of writing is at a fairly advanced stage with its upgradeable core and the initial set of four submodules in place (see figure 6). In near future, Helix2 expects to integrate off-chain lookups for extremely large link structures using Chainlink's [CCIP](https://chain.link/cross-chain) Protocol, integrate presets for stealth payments (via [Umbra](https://github.com/ScopeLift/umbra-protocol)) and a bridge to Dostr - Bitcoin's [Nostr](https://nostr.com) client. Upon completion of these tasks, full Helix2 Protocol will be deployed on Ethereum Mainnet L1, with CCIP bridges to all primary L2 chains such as Optimism, zkSync, Starknet etc following soon after. Coordinates of the WIP codebase are at the end of the document.
 
