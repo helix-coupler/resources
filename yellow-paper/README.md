@@ -7,7 +7,7 @@
 
 ## Abstract
 
-Double Helix or Helix2 is a next-generation link service on Ethereum, designed as a natural successor to generic name services. With Helix2 protocol, it is now possible to link names in several useful configurations on Ethereum blockchain. Helix2 infrastructure makes it possible to define interactions between names, categorise those interactions, assign them rules and labels, and most importantly authorise those interactions with on-chain records. Due to its unique design crafted to leverage interactions among names, Helix2 allows names to form organised on-chain structures and graphs.
+Double Helix or Helix2 is a next-generation link service on Ethereum, designed as a natural successor to generic name services. Helix2 protocol allows names to link to each other in several useful configurations on Ethereum blockchain. Helix2 infrastructure codifies interactions between names, categorises those interactions, assigns them rules and labels, and in some cases, validates those interactions with on-chain records. Due to its unique design crafted to leverage interactions among names, Helix2 enables names to form organised on-chain structures and graphs.
 
 ## Introduction
 
@@ -15,7 +15,7 @@ Most blockchains have developed their own versions of naming systems which allow
 
 [Helix2](https://helix2.xyz) is designed as a next-generation successor of these name services. While the set of nodes form a canonical and natural choice for labeling in any distributed system (e.g. addresses on any blockchain), the observation nonetheless is that most nodes do not interact with each other. For instance, there are about 220 million Ethereum addresses whereas an average address will likely interact with no more than a few hundred other addresses its lifetime. This means that most wallets have a limited set of interactions with contracts and addresses in general and their interactions are classifiable to a very large degree. Keeping this in mind, Helix2 is an attempt to provide Ethereum with a next-generation link service, in addition to the name service already provided by ENS. The expected outcome of the Helix2 protocol is a link-native naming ecosystem, a 'linkspace', where an interaction between two names is representable on-chain similar, but not limited to, a human-readable name for an address. A shift in focus from nodes to links has a profound effect on the nature of structures that an ecosystem can support. Several features which are challenging to achieve with a name service alone become extremely convenient with Helix2. For instance, Helix2 comes with several fundamental and easily accessible structural features such as stealth payments, social graphs, DAOs etc.
 
-![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/gif/helix2-schema.gif)
+![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/gif/schema.gif)
 
 While Helix2 has its own namespace, it does not replace ENS and is in fact intended to work alongside ENS as an extension. Helix2 is able to import all `.` namespaces by design without any bridging or wrapping. Lastly, Helix2 is not the only link service in the works; [Woolball](https://woolball.xyz) is another link service currently under development although the two implementations arguably have more differences than similarities.
 
@@ -52,14 +52,14 @@ Helix2 (Helix + 2) is roughly motivated by the double helix structure of DNA, wh
 All name services so far have essentially been on-chain scalar databases (e.g. ENS, LENS, LNR, CB.ID), meaning that names are simply isolated nodes representable by one label (see figure below). ENS is a good example of such a scalar architecture. Typical name services like ENS are also hierarchical namespaces in the sense that the set of subnodes and nodes form a merkle-tree with labels as leaves of the tree. In such an architecture, names are self-contained and isolated by construction.
 
 &nbsp;
-![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/ens.png)
+![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/png/ens.png)
 
 ### Helix2 Service
 
 Helix2 is essentially two services under one protocol: a native namespace providing a name service and a link service for that underlying namespace. Helix2 is an on-chain vector database. In Helix2, names can bond (or link) with one another; bonds are vectors between names, pointing from one name to another - this is the core premise of Helix2 protocol and essentially what separates it from other services. Helix2 names are not hierarchical, meaning that they cannot have subdomains, i.e. Helix2 is a flat namespace. Subdomains are not necessary in Helix2 since linking provides the same features without constraining the relationships between nodes to within one parent node's hierarchy. This is the only significant divergence of Helix2 namespace from ENS. In addition to this flat namespace, Helix2 has an additional linkspace which is the core utility of the protocol.
 
 &nbsp;
-![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2.png)
+![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/png/helix2.png)
 
 While the theoretical premise of a linkspace appears easy, in practise, this premise requires some crucial modifications to work in a resource-constrained environment such as Ethereum Virtual Machine (EVM). One of these modifications consist of allowing one name to link with multiple names within one object with common or unique relationships among them. This is highly consequential in reducing gas costs for serial linkers.
 
@@ -156,12 +156,12 @@ Lastly, we can define another useful abstraction in the form of a 'polycule', wh
 Other features of a molecule are similar to that of a molecule. To denote a bond with label `label`, we use three consecutive `---` characters, i.e. `---label.`  etc. By using `---label#rule.`, one can refer to a unique hook for a molecule by its `rule`. Alternatively, one can refer to a unique anion in a molecule by its indexed `rule`, e.g. `---label#anion[rule]`
 
 &nbsp;
-![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2-struct.png)
+![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/png/struct.png)
 &nbsp;
 
 ### Remarks
 
-The `molecule` structure is the topological superset of [`name`, `bond`, `polycule`], i.e. it is possible to derive polycules and bonds from molecules although that'll literally be a gas-guzzling mistake. The seemingly unnecessary differentiation between the three is to optimise gas consumption.
+The `molecule` structure is the topological superset of [`name`, `bond`, `polycule`], i.e. it is possible to derive polycules and bonds from molecules although that'll literally be a gas-guzzling mistake. The seemingly unnecessary differentiation between the three is to optimise gas consumption. Helix2 architecture leaves room for future upgrades with new submodules. These submodules may be referenced by their integer index N as `-N-label#rule.`, e.g. `-42-vitalink#404.`
 
 ## Contracts
 
@@ -172,7 +172,7 @@ There are four submodules in the genesis version of protocol - Name, Bond, Molec
 The four submodules are connected at the core by the Helix2 Core manager which is a state-of-the-art [Multi-facet Proxy (EIP-2535)](https://eips.ethereum.org/EIPS/eip-2535). EIP-2535 compliant contracts are fully upgradeable and it allows Helix2 protocol to use one single address forever without compromising on future functionalities or breaking existing on-chain or off-chain functionalities. Helix2 manager is capable of excepting new submodules, replace existing submodules or update core configuration.
 
 
-![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/helix2-contracts.png)
+![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/png/contracts.png)
 
 Helix2 `v0.0.2` contracts are now deployed for testing on Goerli:
 
@@ -193,15 +193,15 @@ Helix2 is a core infrastructure which can be leveraged for perhaps countless uti
 
 #### Multi-sig Safes
 
-By design, Helix2 molecules are a perfect fit for multi-sig vault management. Molecule struct is readily mappable to a multi-sig safe architecture and formalise vaults as nameable linkspaces.
+By design, Helix2 molecules are a perfect fit for multi-sig vault management. Molecule struct is readily mappable to a multi-sig safe architecture and it readily formalises vaults as nameable linkspaces. In fact, Helix2 can store multiple vault agreements among a set of parties inside a single standard struct.
 
 #### Stealth payments
 
-Helix2 hooks can be configured for bonds to receive stealth payments to a name via a stealth protocol such as [Umbra Protocol](https://github.com/ScopeLift/umbra-protocol) or [Aztec](https://zk.money/). Note that this feature is also possible with ENS Resolver.
+Helix2 hooks can be configured for bonds to receive stealth payments to a name via a stealth protocol such as [Umbra Protocol](https://github.com/ScopeLift/umbra-protocol) or [Aztec](https://zk.money/). Note that this feature is also possible with ENS Resolver. In addition however, Helix2 allows performing stealth payments enmasse and with better control over sensitive data streams.
 
 #### Web3 social graphs
 
-Helix2 molecules are a natural fit for open social graphs and could aid in better decentralised social media protocols.
+Helix2 molecules are a natural fit for open social graphs and could aid in better decentralised social media protocols. In the current implementation, molecules are an appropriate representation of social groupings, although a complete version requires one or more submodules that can link molecules and polycules among each other. This requirement may vary from one platform to another, and is therefore not part of the Helix2 core protocol.
 
 #### Messaging and chat apps
 
@@ -209,7 +209,7 @@ Helix2 molecules are a natural fit for web3 messaging apps and chat services. In
 
 #### DAOs
 
-Helix2 molecules are a canonical fit for DAO governance and associated tooling where delegates can be viewed as members of the same molecule with common relationship among all members of the DAO. [Orca Protocol](https://orca.mirror.xyz/Y2xvPmB4cJH51srGqY6Mm_g38lV-7cwvtyDePnyzfAE) is a similar idea which has been implemented already albeit with limited focus on on-chain coordination.
+Helix2 molecules are a canonical fit for DAO governance and associated tooling where delegates can be viewed as members of the same molecule with common relationship among all members of the DAO. [Orca Protocol](https://orca.mirror.xyz/Y2xvPmB4cJH51srGqY6Mm_g38lV-7cwvtyDePnyzfAE) is a similar idea which has been implemented already albeit with limited focus on on-chain coordination. Helix2 in comparison makes the same task significantly easier at protocol level and allows formation of highly complex pods at much lower architectural cost.
 
 #### Other use-cases
 
@@ -219,7 +219,15 @@ Other possible use-cases include
 - proof-of-humanness by defining human-specific hooks in molecules or polycules,
 - and perhaps anything and everything that requires structuring in groups.
 
-## Future progress
+## Future
+
+The architecture of a link service, Helix2, described in this paper shows several advances and features with clear utility across the Ethereum ecosystem. The architecture of Helix2 service described in this paper promises several advances and features with clear utility across the Ethereum ecosystem ranging from identity to stealth payments. Nonetheless, it will be naive to think that its usecases will be limited to what is discussed in this paper. The architecture of Helix2 protocol is fairly low level and it has been designed for maximum upgradeability and dynamism with as little friction as possible. The four submodules introduced in this paper are only the most basic structures and the Helix2 core expects several new submodules in the future under its repertoire.
+
+![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/png/network.png)
+
+The codebase of Helix2 at the time of writing is at a fairly advanced stage with its upgradeable core and the initial set of four submodules in place (see figure 6). In near future, Helix2 expects to integrate off-chain lookups for extremely large link structures using Chainlink's [CCIP](https://chain.link/cross-chain) Protocol, integrate presets for stealth payments (via [Umbra](https://github.com/ScopeLift/umbra-protocol)) and a bridge to Dostr - Bitcoin's [Nostr](https://nostr.com) client. Upon completion of these tasks, full Helix2 Protocol will be deployed on Ethereum Mainnet L1, with CCIP bridges to all primary L2 chains such as Optimism, zkSync, Starknet etc following soon after. Coordinates of the WIP codebase are at the end of the document.
+
+## Roadmap
 
 Progress should come thick and fast in the coming weeks or months while contract undergoes stress tests and improvements. Primary near-term objectives include:
 

@@ -1,13 +1,6 @@
 \documentclass[a4paper,10pt]{article}
 
-% ------------------
-% heading font-size
-\usepackage{sectsty}
-\usepackage{fontspec}
-\sectionfont{\fontsize{12}{15}\selectfont}
-\usepackage[utf8]{inputenc}
-
-% ------------------
+% ------------------------------------
 % packages
 \usepackage[a4paper,margin=1in,footnotesep=2.2\baselineskip]{geometry}
 \usepackage{multicol}
@@ -20,35 +13,123 @@
 \usepackage{ragged2e}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{pagecolor}
+\usepackage{pdftexcmds}
 
-% ------------------
+% ------------------------------------
+% checksum = SHA-1
+\makeatletter
+\ifx\pdf@filemdfivesum\undefined\def\pdf@filemdfivesum#{\mdfivesum file}\fi
+\let\filesum\pdf@filemdfivesum
+\makeatother
+
+% ------------------------------------
+% color definitions
+\definecolor{armygreen}{rgb}{0.14, 0.71, 0.15}
+\definecolor{darkgreen}{rgb}{0.08, 0.48, 0.18}
+\definecolor{darkred}{rgb}{0.86, 0.153, 0.153}
+\definecolor{azure}{rgb}{0.0, 0.5, 1.0}
+\definecolor{bole}{rgb}{0.82, 0.57, 0.22}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{light-gray}{gray}{0.95}
+\definecolor{bg}{HTML}{fcfcfa}
+\definecolor{bt}{HTML}{ffebe6}
+
+% ------------------------------------
+% code styling
+\definecolor{shadecolor}{RGB}{180,180,180}
+\newcommand{\code}[1]{\colorbox{shadecolor!30}{\mono{#1}}}
+\colorlet{Gray}{gray!20!}
+\tcbset{on line, arc=1pt, leftrule=0.25pt,rightrule=0.25pt,toprule=0.25pt,bottomrule=0.25pt,
+	boxsep=3pt, left=0pt,right=0pt,top=0pt,bottom=0pt,
+	colframe=white,colback=Gray,  
+	highlight math style={enhanced}
+}
+\lstdefinelanguage{Solidity}{
+  keywords={bool, true, false, return, address, bytes32, bytes4, bytes1, bytes, uint256, uint8, uint, string, if, while, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={function,struct, mapping, export, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgreen}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{green}\mono,
+  stringstyle=\color{orange}\mono,
+  morestring=[b]',
+  morestring=[b]",
+  mathescape=true,
+  literate={=>}{$\rightarrow{}$}{1}
+}
+\lstset{
+  backgroundcolor=\color{light-gray},
+  language=Solidity,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\mono},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+% ------------------------------------
+% fonts
+\newfontfamily\pro[Path=./]{SFPro.ttf}
+\newfontfamily\pbold[Path=./]{SFProBold.ttf}
+\newfontfamily\mono[Path=./]{SFMono.ttf}
+\newfontfamily\mbold[Path=./]{SFMonoBold.ttf}
+
+% ------------------------------------
+% heading font-size
+\usepackage{sectsty}
+\usepackage{fontspec}
+\sectionfont{\fontsize{12}{15}\selectfont}
+\usepackage[utf8]{inputenc}
+
+% ------------------------------------
 % footnote positioning
 \usepackage[hang,flushmargin,bottom]{footmisc} 
 
-% ------------------
+% ------------------------------------
 % bibliography
-\usepackage[numbers,sort]{natbib}
-%\usepackage{navigator}
 \usepackage[colorlinks=true,
             linkcolor=blue,
             urlcolor=blue,
             citecolor=blue]{hyperref}
+            
+% ------------------------------------
+% blank footnote
+\newcommand\blfootnote[1]{%
+	\begingroup
+	\renewcommand\thefootnote{}\footnote{#1}%
+	\addtocounter{footnote}{-1}%
+	\endgroup
+}
 
-% ------------------
+% ------------------------------------
 % header
 \pagestyle{fancy}
 \fancyhf{}
-
-% ------------------
-% macros
-\input{macros.tex}
+\lfoot{\footnotesize \mono{\#}\tcbox{\mono{\filesum{\jobname}}}}
 \begin{document}
 \setcounter{footnote}{0}
 \newpage
 \topskip15pt
 
-\fancyhead[L]{\footnotesize \mono{author}:\tcbox{\mono{sshmatrix}}}
-\fancyhead[R]{{\footnotesize \mono{Helix2 Protocol} \emoji{dna}}}
+\fancyhead[L]{\footnotesize \mono{author}:\tcbox{\mono{sshmatrix.eth}}}
+\fancyhead[R]{{\footnotesize \mono{\href{https://github.com/helix-coupler}{github.com/helix-coupler}}}}
+\fancyhead[C]{{\footnotesize \emoji{dna}}}
+\fancyfoot[C]{{\footnotesize \mono{\thepage/12}}}
+\fancyfoot[R]{{\footnotesize \mono{\today} \emoji{dna}}}
 
 \begin{center}
 	\textbf{\Huge\pbold{HELIX2}}\\
@@ -57,7 +138,7 @@
 \end{center}
 \begin{center}
 	\textbf{\Large\pbold{ABSTRACT}}\linebreak\linebreak
-	\textls[-50]{\mono{Double Helix or Helix2 is a next-generation link service on Ethereum, designed as a natural successor to generic name services. With Helix2 protocol, it is now possible to link names in several useful configurations on Ethereum blockchain. Helix2 infrastructure makes it possible to define interactions between names, categorise those interactions, assign them rules and labels, and most importantly authorise those interactions with on-chain records. Due to its unique design crafted to leverage interactions among names, Helix2 allows names to form organised on-chain structures and graphs.}}
+	\textls[-50]{\mono{Double Helix or Helix2 is a next-generation link service on Ethereum, designed as a natural successor to generic name services. Helix2 protocol allows names to link to each other in several useful configurations on Ethereum blockchain. Helix2 infrastructure codifies interactions between names, categorises those interactions, assigns them rules and labels, and in some cases, validates those interactions with on-chain records. Due to its unique design crafted to leverage interactions among names, Helix2 enables names to form organised on-chain structures and graphs.}}
 \end{center}
 \vspace{0.2in}
 \begin{flushleft}
@@ -65,7 +146,7 @@
 	\textls[-50]{\mono{Most blockchains have developed their own versions of naming systems which allow representing addresses with human-readable names. On Ethereum, \href{https://app.ens.domains}{Ethereum Name Service} (ENS) is the first and most notable example, while similar services later became available on Tezos and Solana in the form of \href{https://tezos.domains/en}{Tezos Domains} and \href{https://naming.bonfida.org/}{Solana Name Service} by Bonfida. By construction, a name service assigns names to nodes in a network. In a classic web2 world, Domain Name Service (DNS) fulfils this requirement. Crypto-native name services are similar to DNS in the sense that they enable assigning names to addresses similar to how DNS assigns human-readable names to Internet Protocols (IP). There are however clear added benefits to crypto-native naming architecture over DNS since crypto-native services often double as a decent identity framework in their respective blockchain ecosystems. It goes without saying that the immutability and decentralisation properties of typical crypto-native systems add to their desirability owing to their censor-resistant and unruggable nature.}}
 \end{flushleft}
 \begin{figure}[ht!]
-	\centering\includegraphics[width=160mm]{../schema/gif/helix2-schema_2.png}
+ 	\centering\includegraphics[width=160mm]{../schema/png/network.png}
 	\mono{\caption{Helix2 Concept}}
 	\label{fig:concept}
 \end{figure}
@@ -96,7 +177,7 @@
 	\textbf{\Large\pbold{HELIX2 DESIGN}}\linebreak\linebreak\linebreak
 	\textbf{\large\pbold{ETHEREUM NAME SERVICE (ENS)}}\linebreak\linebreak
 	\textls[-50]{\mono{
-		All name services so far have essentially been on-chain scalar databases (e.g. ENS, LENS, LNR, CB.ID), meaning that names are simply isolated nodes representable by one label (see figure below). ENS is a good example of such a scalar architecture. Typical name services like ENS are also hierarchical namespaces in the sense that the set of subnodes and nodes form a merkle-tree with labels as leaves of the tree. In such an architecture, names are self-contained and isolated by construction. Refer to figure 2.
+		All name services so far have essentially been on-chain scalar databases (e.g. ENS, LENS, LNR, CB.ID), meaning that names are simply isolated nodes representable by one label (see figure textcolor{blue}{1} below). ENS is a good example of such a scalar architecture. Typical name services like ENS are also hierarchical namespaces in the sense that the set of subnodes and nodes form a merkle-tree with labels as leaves of the tree. In such an architecture, names are self-contained and isolated by construction. Refer to figure \textcolor{blue}{2}.
 		}}\linebreak\linebreak\linebreak
 	\textbf{\large\pbold{HELIX2 SERVICE}}\linebreak\linebreak
 	\textls[-50]{\mono{
@@ -106,12 +187,12 @@
 	}}
 \end{flushleft}
 \begin{figure}[ht!]
-	\centering\includegraphics[width=160mm]{../schema/ens.png}
+	\centering\includegraphics[width=160mm]{../schema/png/ens.png}
 	\mono{\caption{Ethereum Name Service (ENS)}}
 	\label{fig:ens}
 \end{figure}
 \begin{figure}[ht!]
-	\centering\includegraphics[width=160mm]{../schema/helix2.png}
+	\centering\includegraphics[width=160mm]{../schema/png/helix2.png}
 	\mono{\caption{Helix2 Service}}
 	\label{fig:helix2}
 \end{figure}
@@ -133,12 +214,12 @@
 \end{lstlisting}
 \begin{flushleft}
 	\textls[-50]{\mono{
-		Helix2 names are similar to ENS names, except that the suffix for them is\tcbox{.} instead of\tcbox{.eth}. Helix2 names are not hierarchical, meaning that they cannot have subdomains.\linebreak\linebreak
-		All Helix2 names end with\tcbox{.} and they have a Resolver and Controller. Note again that\tcbox{.} is a reserved character and therefore forbidden. Additionally, \tcbox{color{purple}{-}} and\tcbox{\textcolor{purple}{\textcolor{purple}{\#}}} are also forbidden.
+		Helix2 names are similar to ENS names, except that the suffix for them is\tcbox{.} instead of \tcbox{.eth}. Helix2 names are not hierarchical, meaning that they cannot have subdomains.\linebreak\linebreak
+		All Helix2 names end with\tcbox{.} and they have a Resolver and Controller. Note again that\tcbox{.} is a reserved character and therefore forbidden. Additionally, \tcbox{\textcolor{purple}{-}} and\tcbox{\textcolor{blue}{\textcolor{blue}{\#}}} are also forbidden.
 		}}\linebreak\linebreak\linebreak
 	\textbf{\large\pbold{IMPORTING ENS NAMES}}\linebreak\linebreak
 	\textls[-50]{\mono{
-		Helix2 is capable of importing all\tcbox{.} namespaces by forbidding\tcbox{.} in its native namespace. In the prototype implementation of Helix2, ENS name import is already implemented and ENS users can claim their ENS on Helix2. For ENS names, the representation of names then looks like\tcbox{alice.eth.}, i.e. ENS name\tcbox{alice.eth} followed by a\tcbox{.} as the usual trailing marker.
+		Helix2 is capable of importing all \tcbox{.} namespaces by forbidding \tcbox{.} in its native namespace. In the prototype implementation of Helix2, ENS name import is already implemented and ENS users can claim their ENS on Helix2. For ENS names, the representation of names then looks like \tcbox{alice.eth.}, i.e. ENS name \tcbox{alice.eth} followed by a \tcbox{.} as the usual trailing marker.
 		}}\linebreak\linebreak\linebreak
 	\textbf{\large\pbold{BONDS}}
 \end{flushleft}
@@ -157,7 +238,7 @@
 \end{lstlisting}
 \begin{flushleft}
 	\textls[-50]{\mono{
-		A directional bond between two names \tcbox{alice.}$\rightarrow$\tcbox{bob.} is labeled by its \tcbox{label}. Bonds start with \tcbox{\textcolor{purple}{-}}, end with \tcbox{.} and can be queried by their label prefixed with \tcbox{color{purple}{-}}, e.g.\tcbox{\textcolor{purple}{-}label.}.\linebreak\linebreak
+		A directional bond between two names \tcbox{alice.} $\rightarrow$ \tcbox{bob.} is labeled by its \tcbox{label}. Bonds start with \tcbox{\textcolor{blue}{-}}, end with \tcbox{.} and can be queried by their label prefixed with \tcbox{\textcolor{blue}{-}}, e.g. \tcbox{\textcolor{blue}{-}label.}.\linebreak\linebreak
 		The source of the bond is called a cation (\tcbox{alice.}) and the target is called an anion (\tcbox{bob.}).
 		}}\linebreak\linebreak
 	\textls[-50]{\mono{
@@ -168,9 +249,9 @@
 		}}\linebreak\linebreak\linebreak
 	\textbf{\large\pbold{HOOKS, RULES \& CONFIG}}\linebreak\linebreak
 	\textls[-50]{\mono{
-		The most important features of bonds are \tcbox{config} and \tcbox{rules}, combining to form \tcbox{hooks}, which quantify the link between two names and give meaning to the \tcbox{\textcolor{purple}{-}} representation. Hooks are contractual mappings \tcbox{rule $\rightarrow$ config} between two names mediated by ordered one-to-one mapping inside \tcbox{\textcolor{blue}{uint8}[] rules}: \tcbox{\textcolor{darkgreen}{mapping}(\textcolor{blue}{uint8} $\rightarrow$ \textcolor{blue}{address}) hooks;}\linebreak\linebreak
-		\hspace*{0.2in}$\bullet$ To query a hook's config inside \tcbox{hooks} for a bond, one needs its associated \tcbox{rule}, which is a \tcbox{uint8} identifier mapping to the contractual address \tcbox{config}. Hooks are thus queryable as \tcbox{\textcolor{purple}{-}label\textcolor{purple}{\textcolor{purple}{\#}}rule.}, e.g. \tcbox{\textcolor{purple}{-}label\textcolor{purple}{\textcolor{purple}{\#}}404.}.\linebreak\linebreak
-		\hspace*{0.2in}$\bullet$ A trivial application of a hook is a payment router, i.e. payment sent to \tcbox{0} hook \tcbox{\textcolor{purple}{-}label\textcolor{purple}{\textcolor{purple}{\#}}0.} is routed to the address of \tcbox{bob.}; more on hooks in upcoming sections.\linebreak
+		The most important features of bonds are \tcbox{config} and \tcbox{rules}, combining to form \tcbox{hooks}, which quantify the link between two names and give meaning to the \tcbox{\textcolor{blue}{-}} representation. Hooks are contractual mappings \tcbox{rule $\rightarrow$ config} between two names mediated by ordered one-to-one mapping inside \tcbox{\textcolor{blue}{uint8}[] rules}: \tcbox{\textcolor{darkgreen}{mapping}(\textcolor{blue}{uint8} $\rightarrow$ \textcolor{blue}{address}) hooks;}\linebreak\linebreak
+		\hspace*{0.2in}$\bullet$ To query a hook's config inside \tcbox{hooks} for a bond, one needs its associated \tcbox{rule}, which is a \tcbox{uint8} identifier mapping to the contractual address \tcbox{config}. Hooks are thus queryable as \tcbox{\textcolor{blue}{-}label\textcolor{blue}{\textcolor{blue}{\#}}rule.}, e.g. \tcbox{\textcolor{blue}{-}label\textcolor{blue}{\textcolor{blue}{\#}}404.}.\linebreak\linebreak
+		\hspace*{0.2in}$\bullet$ A trivial application of a hook is a payment router, i.e. payment sent to \tcbox{0} hook \tcbox{\textcolor{blue}{-}label\textcolor{blue}{\textcolor{blue}{\#}}0.} is routed to the address of \tcbox{bob.}; more on hooks in upcoming sections.\linebreak
 		}}\linebreak\linebreak
 	\textbf{\large\pbold{MOLECULES}}
 \end{flushleft}
@@ -190,11 +271,11 @@
 \begin{flushleft}
 	\textls[-50]{\mono{
 		Helix2 allows for multi-bonding such that a cation can bond with multiple anions within one data structure instead of creating individual (and costlier) bonds; this structure is called a 'molecule' (or 'moly' in short). In a molecule, all individual bonds share the same covalence.\linebreak\linebreak
-		Other features of a molecule are similar to that of a bond, e.g. a molecule can have an label and hooks. To denote a bond with label \tcbox{label}, we use two consecutive \tcbox{\textcolor{purple}{-\,-}} characters, i.e. \tcbox{\textcolor{purple}{-\,-}label.} without refering to an anion since molecules are anion-agnostic and hook-independent. By using \tcbox{\textcolor{purple}{-\,-}label\textcolor{purple}{\textcolor{purple}{\#}}rule.}, one can refer to a unique hook for a molecule. Covalence can be set (\tcbox{true}) or unset (\tcbox{false}) through co-signing a message by the cation and all the anions.
+		Other features of a molecule are similar to that of a bond, e.g. a molecule can have an label and hooks. To denote a bond with label \tcbox{label}, we use two consecutive \tcbox{\textcolor{blue}{-\,-}} characters, i.e. \tcbox{\textcolor{blue}{-\,-}label.} without refering to an anion since molecules are anion-agnostic and hook-independent. By using \tcbox{\textcolor{blue}{-\,-}label\textcolor{blue}{\textcolor{blue}{\#}}rule.}, one can refer to a unique hook for a molecule. Covalence can be set (\tcbox{true}) or unset (\tcbox{false}) through co-signing a message by the cation and all the anions.
 		}}\linebreak\linebreak\linebreak
 	\textbf{\large\pbold{POLYCULES}}
 \end{flushleft}
-\lstset{emph={rules,hooks,anions}, emphstyle=\textcolor{red}}
+\lstset{emph={rules,hooks,anions}, emphstyle=\textcolor{purple}}
 \begin{lstlisting}
 
 	struct POLYCULE {
@@ -210,18 +291,18 @@
 \end{lstlisting}
 \begin{flushleft}
 	\textls[-50]{\mono{
-		Lastly, we can define another useful abstraction in the form of a 'polycule', which is a molecule comprising of unique bonds between a cation and a set of anions. In a polycule, all individual bonds share the same covalence despite being unique. In short, \tcbox{rules\textcolor{orange}{.length} == anions\textcolor{orange}{.length}}, and \tcbox{rules} \& \tcbox{anions} are a one-to-one map.\linebreak\linebreak
-		Other features of a molecule are similar to that of a molecule. To denote a bond with label \tcbox{label}, we use three consecutive \tcbox{\textcolor{purple}{-\,-\,-}} characters, i.e. \tcbox{\textcolor{purple}{-\,-\,-}label.}  etc. By using \tcbox{\textcolor{purple}{-\,-\,-}label\textcolor{purple}{\#}rule.}, one can refer to a unique hook for a molecule by its \tcbox{rule}. Alternatively, one can refer to a unique anion in a molecule by its indexed \tcbox{rule}, e.g. \tcbox{\textcolor{purple}{-\,-\,-}label\textcolor{purple}{\#}anions[rule]}. Covalence can be set or unset through co-signing a message by the cation and all the anions.
+		Lastly, we can define another useful abstraction in the form of a 'polycule', which is a molecule comprising of unique bonds between a cation and a set of anions. In a polycule, all individual bonds share the same covalence despite being unique. In short, \tcbox{rules\textcolor{blue}{.length} == anions\textcolor{blue}{.length}}, and \tcbox{rules} \& \tcbox{anions} are a one-to-one map.\linebreak\linebreak
+		Other features of a molecule are similar to that of a molecule. To denote a bond with label \tcbox{label}, we use three consecutive \tcbox{\textcolor{blue}{-\,-\,-}} characters, i.e. \tcbox{\textcolor{blue}{-\,-\,-}label.}  etc. By using \tcbox{\textcolor{blue}{-\,-\,-}label\textcolor{blue}{\#}rule.}, one can refer to a unique hook for a molecule by its \tcbox{rule}. Alternatively, one can refer to a unique anion in a molecule by its indexed \tcbox{rule}, e.g. \tcbox{\textcolor{blue}{-\,-\,-}label\textcolor{blue}{\#}anions[rule]}. Covalence can be set or unset through co-signing a message by the cation and all the anions.
 	}}
 \end{flushleft}
 \begin{figure}[ht!]
-	\centering\includegraphics[width=160mm]{../schema/helix2-struct.png}
+	\centering\includegraphics[width=160mm]{../schema/png/struct.png}
 	\mono{\caption{Helix2 Classes}}
 	\label{fig:classes}
 \end{figure}
 \begin{flushleft}
 	\textls[-50]{\mono{
-		The \tcbox{molecule} structure is a topological superset i.e. it is possible to derive polycules and bonds from molecules although that'll literally be a gas-guzzling mistake. The seemingly unnecessary differentiation between the three is to optimise gas consumption.
+		The \tcbox{molecule} structure is a topological superset i.e. it is possible to derive polycules and bonds from molecules although that'll literally be a gas-guzzling mistake. The seemingly unnecessary differentiation between the three is to optimise gas consumption. Helix2 architecture leaves room for future upgrades with new submodules. These submodules may be referenced by their integer index N as \tcbox{\textcolor{blue}{-\,N\,-}label\textcolor{blue}{\#}rule.}, e.g \tcbox{\textcolor{blue}{-\,42\,-}vitalink\textcolor{blue}{\#}404.}.
 		}}\linebreak\linebreak\linebreak
 	\textbf{\Large\pbold{CONTRACTS}}\linebreak\linebreak
 	\textls[-50]{\mono{
@@ -229,7 +310,7 @@
 	}}
 \end{flushleft}
 \begin{figure}[ht!]
-	\centering\includegraphics[width=160mm]{../schema/helix2-contracts.png}
+	\centering\includegraphics[width=160mm]{../schema/png/contracts.png}
 	\mono{\caption{Helix2 Contracts}}
 	\label{fig:contracts}
 \end{figure}
@@ -244,15 +325,15 @@
 	}}
 	\textbf{\large\pbold{MULTI-SIG VAULTS}}\linebreak\linebreak
 	\textls[-50]{\mono{
-		By design, Helix2 molecules are a perfect fit for multi-sig vault management. Molecule struct is readily mappable to a multi-sig safe architecture and formalise vaults as nameable linkspaces.\linebreak\linebreak
+		By design, Helix2 molecules are a perfect fit for multi-sig vault management. Molecule struct is readily mappable to a multi-sig safe architecture and it readily formalises vaults as nameable linkspaces. In fact, Helix2 can store multiple vault agreements among a set of parties inside a single standard struct.\linebreak\linebreak
 	}}
 	\textbf{\large\pbold{STEALTH PAYMENTS}}\linebreak\linebreak
 	\textls[-50]{\mono{
-		Helix2 hooks can be configured for bonds to receive stealth payments to a name via a stealth protocol such as \href{https://github.com/ScopeLift/umbra-protocol}{Umbra Protocol} or \href{https://zk.money/}{Aztec}. Note that this feature is also possible with ENS Resolver.\linebreak\linebreak
+		Helix2 hooks can be configured for bonds to receive stealth payments to a name via a stealth protocol such as \href{https://github.com/ScopeLift/umbra-protocol}{Umbra Protocol} or \href{https://zk.money/}{Aztec}. Note that this feature is also possible with ENS Resolver. In addition however, Helix2 allows performing stealth payments enmasse and with better control over sensitive data streams.\linebreak\linebreak
 	}}
 	\textbf{\large\pbold{WEB3 SOCIAL GRAPHS}}\linebreak\linebreak
 	\textls[-50]{\mono{
-		Helix2 molecules are a natural fit for open social graphs and could aid in better decentralised social media protocols.\linebreak\linebreak
+		Helix2 molecules are a natural fit for open social graphs and could aid in better decentralised social media protocols. In the current implementation, molecules are an appropriate representation of social groupings, although a complete version requires one or more submodules that can link molecules and polycules among each other. This requirement may vary from one platform to another, and is therefore not part of the Helix2 core protocol.\linebreak\linebreak
 	}}
 	\textbf{\large\pbold{MESSAGING \& CHAT APPS}}\linebreak\linebreak
 	\textls[-50]{\mono{
@@ -260,7 +341,7 @@
 	}}
 	\textbf{\large\pbold{DAO}}\linebreak\linebreak
 	\textls[-50]{\mono{
-		Helix2 molecules are a canonical fit for DAO governance and associated tooling where delegates can be viewed as members of the same molecule with common relationship among all members of the DAO. \href{https://orca.mirror.xyz/Y2xvPmB4cJH51srGqY6Mm_g38lV-7cwvtyDePnyzfAE}{Orca Protocol} is a similar idea which has been implemented already albeit with limited focus on on-chain coordination.\linebreak\linebreak
+		Helix2 molecules are a canonical fit for DAO governance and associated tooling where delegates can be viewed as members of the same molecule with common relationship among all members of the DAO. \href{https://orca.mirror.xyz/Y2xvPmB4cJH51srGqY6Mm_g38lV-7cwvtyDePnyzfAE}{Orca Protocol} is a similar idea which has been implemented already albeit with limited focus on on-chain coordination. Helix2 in comparison makes the same task significantly easier at protocol level and allows formation of highly complex pods at much lower architectural cost.\linebreak\linebreak
 	}}
 	\textbf{\large\pbold{OTHER}}\linebreak\linebreak
 	\textls[-50]{\mono{
@@ -268,18 +349,32 @@
 		\hspace*{0.2in}$\bullet$ a unified web3 individual and group reputation system,\linebreak\linebreak
 		\hspace*{0.2in}$\bullet$ proof-of-humanness by defining human-specific hooks in molecules or polycules,\linebreak\linebreak
 		\hspace*{0.2in}$\bullet$ and perhaps anything and everything that requires structuring in groups.\linebreak\linebreak\linebreak
-		\textbf{\Large\pbold{CLOSING REMARKS}}\linebreak\linebreak
-		\textls[-50]{\mono{The architecture of a link service, Helix2, described in this paper shows several advances and features with clear utility across the Ethereum ecosystem.}}
-	}}
+		}}
+		\textbf{\Large\pbold{FUTURE}}\linebreak\linebreak
+		\textls[-50]{\mono{The architecture of a link service, Helix2, described in this paper shows several advances and features with clear utility across the Ethereum ecosystem.
+		}}
 \end{flushleft}
-\begin{multicols}{2}
-	\bibliographystyle{plainnat}
-	\bibliography{}
-\end{multicols}
+\begin{figure}[h]
+	\centering\includegraphics[width=160mm]{../schema/png/roadmap.png}
+	\mono{\caption{Helix2 Roadmap}}
+	\label{fig:roadmap}
+\end{figure}
+\begin{flushleft}
+	\textls[-50]{\mono{The architecture of Helix2 service described in this paper promises several advances and features with clear utility across the Ethereum ecosystem ranging from identity to stealth payments. Nonetheless, it will be naive to think that its usecases will be limited to what is discussed in this paper. The architecture of Helix2 protocol is fairly low level and it has been designed for maximum upgradeability and dynamism with as little friction as possible. The four submodules introduced in this paper are only the most basic structures and the Helix2 core expects several new submodules in the future under its repertoire.\linebreak\linebreak
+	The codebase of Helix2 at the time of writing is at a fairly advanced stage with its upgradeable core and the initial set of four submodules in place (see figure \textcolor{blue}{6}). In near future, Helix2 expects to integrate off-chain lookups for extremely large link structures using \href{https://chain.link/cross-chain}{Chainlink's CCIP Protocol}, integrate presets for stealth payments (via \href{https://github.com/ScopeLift/umbra-protocol}{Umbra}) and a bridge to Dostr - Bitcoin's \href{https://nostr.com/}{Nostr} client. Upon completion of these tasks, full Helix2 Protocol will be deployed on Ethereum Mainnet L1, with CCIP bridges to all primary L2 chains such as Optimism, zkSync, Starknet etc following soon after. Coordinates of the WIP codebase are at the end of the document.\linebreak\linebreak\linebreak
+	}}
+	\textbf{\large\pbold{ACKNOWLEDGEMENTS}}\linebreak\linebreak
+	\textls[-50]{\mono{Helix2 is a work in progress and we thank \tcbox{c0de4c0ffee.eth} for their valuable insights. We invite individuals and parties with interest in contributing to Helix2 protocol to get in touch via Github. 
+	}}\linebreak\linebreak\linebreak
+\end{flushleft}
+\begin{flushright}
+	\textbf{\large\pbold{METADATA}}\linebreak\linebreak
+	\textls[-50]{\mono{
+		\mono{Github: }\tcbox{\mono{\href{https://github.com/helix-coupler}{github.com/helix-coupler}}}\linebreak
+		\mono{Contracts: }\tcbox{\mono{\href{https://github.com/helix-coupler}{github.com/helix-coupler/helix2-contracts}}}\linebreak
+		\mono{Source: }\tcbox{\mono{\href{https://github.com/helix-coupler}{github.com/helix-coupler/resources}}}\linebreak
+		\mono{SHA-1 Checksum: }\tcbox{\mono{\href{https://github.com/helix-coupler/resources/blob/master/yellow-paper/helix2.tex}{\filesum{\jobname}}}}\linebreak
+		\mono{Date: }\tcbox{\mono{\today}}\linebreak
+	}}
+\end{flushright}
 \end{document}
-
-%\begin{flushleft}
-%	\textbf{\large\pbold{HELIX2 SERVICE}}\linebreak\linebreak
-%	\textls[-50]{\mono{	
-%		}}\linebreak\linebreak
-%\end{flushleft}
