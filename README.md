@@ -4,7 +4,7 @@
 
 ## About
 
-Double Helix or Helix2 is a next-generation link service on Ethereum, designed as a natural successor to generic name services. Helix2 protocol allows names to link to each other in several useful configurations on Ethereum blockchain. Helix2 infrastructure codifies interactions between names, categorises those interactions, assigns them rules and labels, and in some cases, validates those interactions with on-chain records. Due to its unique design crafted to leverage interactions among names, Helix2 enables names to form organised on-chain structures and graphs.
+Double Helix or Helix2 is a next-generation link service and account abstraction protocol on Ethereum, originally designed as a natural successor to generic name services. Helix2 protocol allows names to link to each other in several useful configurations on Ethereum blockchain. Helix2 infrastructure codifies interactions between names, categorises those interactions, assigns them rules and labels, and in some cases, validates those interactions with on-chain records. Due to its unique design crafted to leverage interactions among names, Helix2 enables names to form organised on-chain structures and graphs. Wallets integrating Helix2 can leverage its properties to provide users with a smart contract interface to transact and interact with the Ethereum blockchain; this arguably makes Helix2 an account abstraction infrastructure.  
 
 ## Description
 
