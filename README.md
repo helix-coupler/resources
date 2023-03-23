@@ -20,13 +20,19 @@ There are four submodules in the genesis version of protocol - Name, Bond, Molec
 
 The four submodules are connected at the core by the Helix2 Core manager which is a state-of-the-art [Multi-facet Proxy (EIP-2535)](https://eips.ethereum.org/EIPS/eip-2535). EIP-2535 compliant contracts are fully upgradeable and it allows Helix2 protocol to use one single address forever without compromising on future functionalities or breaking existing on-chain or off-chain functionalities. Helix2 manager is capable of excepting new submodules, replace existing submodules or update core configuration.
 
-
 ![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/png/contracts.png)
 
+## Account Abstraction
 
-## Utility
+Helix2 is a core infrastructure which can be leveraged for perhaps countless utilities. One of the biggest utilities of Helix2 arises in account abstraction. **A**ccount **A**bstraction (AA) is an umbrella term first defined in [EIP-2938](https://eips.ethereum.org/EIPS/eip-2938), to categorise infrastructures that allow the use of smart contracts as wallets instead of the typical logic-free 'externally owned accounts' (EOA) that are currently in use as wallets. The core ideology behind account abstraction is to allow users to arbitrarily customise their handling of transactions, funds and interactions with the Ethereum blockchain in general with smart contract code.
 
-Helix2 is a core infrastructure which can be leveraged for perhaps countless utilities. Some of the notable few that come to mind are the following.
+Several decentralised applications (dApps) on Ethereum already allow specific smart control over blockchain interactions (e.g. [Gnosis Vault](https://safe.global/), [Umbra Cash](https://app.umbra.cash), [Tornado Cash](https://tornadocash.eth.link/), [Gas Station Network](https://opengsn.org/) but this list is rather small and the utility of them rather limited to only a few aspects. These services may additionally require users to pay additional fees on top of the (un)optimised gas costs.
+
+![](https://raw.githubusercontent.com/helix-coupler/resources/master/schema/png/abstraction.png)
+
+EIP-2938 proposed a new set of `OPCODES` that would allow account abstraction at core level but this required significant non-trivial changes to Ethereum consensus layer. [EIP-4337](https://eips.ethereum.org/EIPS/eip-4337) proposed another infrastructure that uses alternative mempools ('alt mempools') for bundling transactions and then routing them to the consensus layer upon validation (akin to [Flashbots](https://www.flashbots.net/); the alt mempools would then be responsible for validating the smart wallet transaction calls and thereby such a validation & routing environment remains independent of the primary mempool and wouldn't require changes to the consensus layer itself. Due to the independent nature of the alt mempools, there is also room for mempool-level optimisations (e.g. of bundlers) to further minimise gas costs which is usually not the case for typical dApps.
+
+Helix2 is also an account abstraction infrastructure that uses a namespace and its associated linkspaces, i.e. data structures containining pointers to smart contracts from names, to act as a router of transactions for any name (see figure above). Since the name- and linkspace are disjoint from the underlying EOA, the user pays no other gas costs than the standard network transaction fees, excluding the one-time cost of writing the pointers in the Helix2 data structure. Wallets connecting users to the blockchain via their names are therefore abstracted by Helix2 since the user can insert arbitrary logic to their name- and linkspace. ENS already provides a fraction of this functionality but loses out on the ability to enforce dynamic arbitrary front-facing logic due to its heirarchical nature. The several specific usecases of Helix2 mentioned in the upcoming sections are all examples of account abstraction.
 
 #### Multi-sig Safes
 
