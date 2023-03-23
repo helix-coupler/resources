@@ -1728,7 +1728,7 @@
              transform="rotate(-11.223034)"><tspan
                sodipodi:role="line"
                id="tspan1193"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.72963px;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';stroke:#000000;stroke-width:0.2994;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.72963px;font-family:'SPOTNIK';-inkscape-font-specification:'SPOTNIK';stroke:#000000;stroke-width:0.2994;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
                x="169.1282"
                y="206.2338" /></text>
         </g>
@@ -3042,7 +3042,7 @@
                sodipodi:nodetypes="cccc" />
             <text
                xml:space="preserve"
-               style="font-size:8.02849px;line-height:1.25;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#ff0000;fill-opacity:0.964706;stroke:#ff0000;stroke-width:0.669348;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.964706"
+               style="font-size:8.02849px;line-height:1.25;font-family:'SPOTNIK';-inkscape-font-specification:'SPOTNIK';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#ff0000;fill-opacity:0.964706;stroke:#ff0000;stroke-width:0.669348;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.964706"
                x="178.54469"
                y="327.4071"
                id="text1830-2-9"><tspan
@@ -3053,7 +3053,7 @@
                  id="tspan1832-7-6">read config</tspan></text>
             <text
                xml:space="preserve"
-               style="font-size:8.02849px;line-height:1.25;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#078f2b;fill-opacity:0.980392;stroke:#078f2b;stroke-width:0.669348;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.980392"
+               style="font-size:8.02849px;line-height:1.25;font-family:'SPOTNIK';-inkscape-font-specification:'SPOTNIK';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#078f2b;fill-opacity:0.980392;stroke:#078f2b;stroke-width:0.669348;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.980392"
                x="221.31932"
                y="603.33771"
                id="text1830-2-9-0"><tspan
@@ -3064,7 +3064,7 @@
                  id="tspan1832-7-6-6">read config</tspan></text>
             <text
                xml:space="preserve"
-               style="font-size:8.02849px;line-height:1.25;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#8b008f;fill-opacity:0.74902;stroke:#8b008f;stroke-width:0.669348;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.75"
+               style="font-size:8.02849px;line-height:1.25;font-family:'SPOTNIK';-inkscape-font-specification:'SPOTNIK';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#8b008f;fill-opacity:0.74902;stroke:#8b008f;stroke-width:0.669348;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.75"
                x="-527.10626"
                y="-63.33955"
                id="text1830-2-9-0-9"
@@ -4719,7 +4719,7 @@
        id="text3094"><tspan
          sodipodi:role="line"
          id="tspan3092"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'SPOTNIK';-inkscape-font-specification:'SPOTNIK';stroke-width:0.264583"
          x="203.62862"
          y="178.46681" /></text>
     <g
@@ -4829,7 +4829,7 @@
          y="510.89792">BOND</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:5.7528px;line-height:1.25;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#057dfa;fill-opacity:0.988235;stroke:#057dfa;stroke-width:0.479622;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.987903"
+       style="font-size:5.7528px;line-height:1.25;font-family:'SPOTNIK';-inkscape-font-specification:'SPOTNIK';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#057dfa;fill-opacity:0.988235;stroke:#057dfa;stroke-width:0.479622;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.987903"
        x="300.98315"
        y="164.40614"
        id="text1830"><tspan
@@ -4845,7 +4845,7 @@
          id="tspan1832">and storage</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#747474;fill-opacity:0.91129;stroke:#747474;stroke-width:0.48;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.903226"
+       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK';-inkscape-font-specification:'SPOTNIK';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#747474;fill-opacity:0.91129;stroke:#747474;stroke-width:0.48;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.903226"
        x="270.65369"
        y="184.17073"
        id="text1830-2"><tspan
@@ -4894,7 +4894,7 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#057dfa;fill-opacity:0.988235;stroke:#057dfa;stroke-width:0.479621;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.987903"
+       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK';-inkscape-font-specification:'SPOTNIK';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#057dfa;fill-opacity:0.988235;stroke:#057dfa;stroke-width:0.479621;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.987903"
        x="459.87146"
        y="207.86705"
        id="text1830-26"><tspan
@@ -4905,7 +4905,7 @@
          id="tspan1832-2">by polycule</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#057dfa;fill-opacity:0.988235;stroke:#057dfa;stroke-width:0.479621;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.987903"
+       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK';-inkscape-font-specification:'SPOTNIK';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#057dfa;fill-opacity:0.988235;stroke:#057dfa;stroke-width:0.479621;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.987903"
        x="-210.27727"
        y="421.68231"
        id="text1830-26-2"
@@ -4917,7 +4917,7 @@
          id="tspan1832-2-1">read in</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#057dfa;fill-opacity:0.988235;stroke:#057dfa;stroke-width:0.479621;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.987903"
+       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK';-inkscape-font-specification:'SPOTNIK';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#057dfa;fill-opacity:0.988235;stroke:#057dfa;stroke-width:0.479621;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.987903"
        x="487.65036"
        y="-364.23737"
        id="text1830-26-8"
@@ -4929,7 +4929,7 @@
          id="tspan1832-2-7">by molecule</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#057dfa;fill-opacity:0.988235;stroke:#057dfa;stroke-width:0.479621;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.987903"
+       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK';-inkscape-font-specification:'SPOTNIK';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#057dfa;fill-opacity:0.988235;stroke:#057dfa;stroke-width:0.479621;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.987903"
        x="369.03873"
        y="439.90979"
        id="text1830-26-2-5"><tspan
@@ -4940,7 +4940,7 @@
          id="tspan1832-2-1-6">read in</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#057dfa;fill-opacity:0.988235;stroke:#057dfa;stroke-width:0.479621;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.987903"
+       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK';-inkscape-font-specification:'SPOTNIK';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#057dfa;fill-opacity:0.988235;stroke:#057dfa;stroke-width:0.479621;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.987903"
        x="158.32343"
        y="317.76965"
        id="text1830-26-8-6"><tspan
@@ -4951,7 +4951,7 @@
          id="tspan1832-2-7-9">by bond</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#057dfa;fill-opacity:0.988235;stroke:#057dfa;stroke-width:0.479621;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.987903"
+       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK';-inkscape-font-specification:'SPOTNIK';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#057dfa;fill-opacity:0.988235;stroke:#057dfa;stroke-width:0.479621;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.987903"
        x="-319.3508"
        y="134.88707"
        id="text1830-26-2-5-2"
@@ -4969,7 +4969,7 @@
        id="text1812"><tspan
          sodipodi:role="line"
          id="tspan1810"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944px;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';stroke:#000000;stroke-width:0.7;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.81944px;font-family:'SPOTNIK';-inkscape-font-specification:'SPOTNIK';stroke:#000000;stroke-width:0.7;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          x="116.32716"
          y="71.849968">contracts</tspan></text>
     <text
@@ -4993,7 +4993,7 @@
        y="185.19873" />
     <text
        xml:space="preserve"
-       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-width:0.479621;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK';-inkscape-font-specification:'SPOTNIK';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-width:0.479621;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        x="376.96899"
        y="89.48101"
        id="text1830-4"><tspan
@@ -5014,7 +5014,7 @@
          id="tspan1729">configurations</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#8c008e;fill-opacity:0.992157;stroke:#8c008e;stroke-width:0.479621;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.991936"
+       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK';-inkscape-font-specification:'SPOTNIK';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#8c008e;fill-opacity:0.992157;stroke:#8c008e;stroke-width:0.479621;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.991936"
        x="237.101"
        y="523.02625"
        id="text1830-4-7"><tspan
@@ -5030,7 +5030,7 @@
          id="tspan1794">with configuration</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK demo';-inkscape-font-specification:'SPOTNIK demo';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#078f2c;fill-opacity:0.979839;stroke:#078f2c;stroke-width:0.479621;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.980392"
+       style="font-size:5.75281px;line-height:1.25;font-family:'SPOTNIK';-inkscape-font-specification:'SPOTNIK';font-variant-ligatures:none;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#078f2c;fill-opacity:0.979839;stroke:#078f2c;stroke-width:0.479621;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.980392"
        x="539.05347"
        y="359.42618"
        id="text1830-4-0"><tspan
