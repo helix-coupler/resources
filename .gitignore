@@ -1,6 +1,7 @@
+*/*/.DS_Store
 */.DS_Store
 .DS_Store
-yellow-paper/*.log
-yellow-paper/*.aux
-yellow-paper/*.out
-yellow-paper/*.gz
+*/*.log
+*/*.aux
+*/*.out
+*/*.gz
